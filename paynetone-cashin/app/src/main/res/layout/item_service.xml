@@ -1,0 +1,43 @@
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="@dimen/_43sdp"
+            android:layout_height="@dimen/_43sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="Nạp tiền điện thoại"
+            android:textColor="#4C4B4B"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+        <View
+            android:id="@+id/viewDim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.45"
+            android:background="@drawable/bg_item_provider_not_active"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/img_logo"
+            app:layout_constraintEnd_toEndOf="@id/img_logo"
+            app:layout_constraintStart_toStartOf="@id/img_logo"
+            app:layout_constraintTop_toTopOf="@id/img_logo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

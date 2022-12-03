@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="anchor_default">@dimen/_8sdp</dimen>
+    <dimen name="anchor_sheet_bottom">@dimen/_12sdp</dimen>
+    <dimen name="logoDetail">@dimen/_32sdp</dimen>
+    <dimen name="buttonHeight">@dimen/_40sdp</dimen>
+    <dimen name="titleHeight">@dimen/_40sdp</dimen>
+    <dimen name="logoHeader">@dimen/_30sdp</dimen>
+    <dimen name="textHeader">@dimen/_11sdp</dimen>
+    <dimen name="paddingDetail">@dimen/_6sdp</dimen>
+    <dimen name="imgPersonal">@dimen/_24sdp</dimen>
+    <dimen name="paddingItemWithdraw">@dimen/_2sdp</dimen>
+    <dimen name="marginRegister">@dimen/_12sdp</dimen>
+    <dimen name="textSizeRegister">@dimen/_12sdp</dimen>
+
+    <dimen name="half_margin">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="medium_margin">24dp</dimen>
+    <dimen name="double_margin">32dp</dimen>
+
+    <dimen name="button_size_shutter">100dp</dimen>
+    <dimen name="button_size_big">56dp</dimen>
+    <dimen name="button_size_small">36dp</dimen>
+    <dimen name="count_down_text_size">72sp</dimen>
+</resources>

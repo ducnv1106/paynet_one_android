@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_home"
+        android:icon="@drawable/bg_ic_home_selector"
+        android:title="Trang chủ"/>
+
+    <item
+        android:id="@+id/page_persional"
+        android:icon="@drawable/bg_ic_personal_selector"
+        android:title="Cá nhân"/>
+</menu>

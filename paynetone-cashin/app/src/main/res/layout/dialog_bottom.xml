@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/anchor_sheet_bottom"
+        android:textSize="@dimen/_12sdp"
+        android:text="Chi tiết đơn hàng"
+        android:textAlignment="center" />
+
+    <View style="@style/Divider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/anchor_sheet_bottom">
+
+        <TextView
+            android:textSize="@dimen/_11sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            style="@style/TextPayment"
+            android:textSize="@dimen/_11sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="0987654321" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/anchor_sheet_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp"
+            android:text="Số tiền" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/TextPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="1,000"
+            android:textSize="@dimen/_11sdp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:padding="@dimen/anchor_sheet_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phí" />
+
+        <TextView
+            android:id="@+id/tv_fee"
+            style="@style/TextPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="1,000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/anchor_sheet_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_11sdp"
+            android:text="Trạng thái đơn hàng" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            style="@style/TextPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/order_status_w"
+            android:paddingStart="@dimen/_6sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="Chờ thanh toán"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btn_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/buttonHeight"
+        android:background="@drawable/bg_button_bottom_dialog"
+        android:layout_margin="@dimen/anchor_sheet_bottom"
+        android:gravity="center"
+        android:textSize="@dimen/_11sdp"
+        android:textColor="@color/white"
+        android:text="@string/str_close" />
+
+</LinearLayout>

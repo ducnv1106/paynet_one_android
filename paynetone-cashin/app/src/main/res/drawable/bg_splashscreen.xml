@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/white" />
+    <item android:drawable="@drawable/ic_logo2"
+        android:height="@dimen/_15sdp"
+        android:width="@dimen/_100sdp"
+        android:gravity="center|bottom"
+        android:bottom="@dimen/_50sdp"/>
+    <item
+        android:drawable="@drawable/logo_paynet_one"
+        android:height="@dimen/_95sdp"
+        android:width="@dimen/_220sdp"
+        android:gravity="center">
+    </item>
+
+
+</layer-list>

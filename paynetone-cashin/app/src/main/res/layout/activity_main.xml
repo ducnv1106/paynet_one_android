@@ -1,0 +1,441 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glStartContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.032" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glEndContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.968" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_information_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#027FFE"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_personal"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:src="@drawable/ic_personal_fragment_main"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_personal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/img_personal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/img_personal"
+                app:layout_constraintTop_toTopOf="@id/img_personal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_merchant_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hạn mức bán hàng"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_personal" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_han_muc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0 VNĐ"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@id/layout_banner"
+            app:layout_constraintTop_toBottomOf="@id/cl_information_personal">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#027FFE"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100sdp"
+                            android:background="#027FFE"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:background="@drawable/bg_header_main"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_money_waiting"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/img_money_waiting"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:src="@drawable/ic_money_waiting_checked"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_name_money_waiting"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="Số tiền chờ đối soát"
+                                    android:textColor="#58595B"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    app:layout_constraintEnd_toStartOf="@id/tv_money_waiting"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money_waiting"
+                                    app:layout_constraintStart_toEndOf="@id/img_money_waiting"
+                                    app:layout_constraintTop_toTopOf="@id/img_money_waiting" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_money_waiting"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:text="0 VNĐ"
+                                    android:textColor="@color/colorBlack3"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money_waiting"
+                                    app:layout_constraintEnd_toStartOf="@id/img_arrow_right_money_watting"
+                                    app:layout_constraintTop_toTopOf="@id/img_money_waiting" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/img_arrow_right_money_watting"
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money_waiting"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/img_money_waiting" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="#D1D3D4"
+                                    app:layout_constraintEnd_toEndOf="@id/img_arrow_right_money_watting"
+                                    app:layout_constraintStart_toStartOf="@id/img_money_waiting"
+                                    app:layout_constraintTop_toBottomOf="@id/img_money_waiting" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layout_money"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                app:layout_constraintTop_toBottomOf="@id/layout_money_waiting">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/img_money"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:src="@drawable/ic_money_checked"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_name_money"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="Số tiền đã đối soát"
+                                    android:textColor="#58595B"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    app:layout_constraintEnd_toStartOf="@id/tv_money"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money"
+                                    app:layout_constraintStart_toEndOf="@id/img_money"
+                                    app:layout_constraintTop_toTopOf="@id/img_money" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tv_money"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:text="0 VNĐ"
+                                    android:textColor="@color/colorBlack3"
+                                    android:textSize="@dimen/_12sdp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money"
+                                    app:layout_constraintEnd_toStartOf="@id/img_arrow_right_money"
+                                    app:layout_constraintTop_toTopOf="@id/img_money" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/img_arrow_right_money"
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    app:layout_constraintBottom_toBottomOf="@id/img_money"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/img_money" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_banner"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_offers_promotions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/str_offers_promotions"
+                android:textColor="@color/colorBlack3"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.paynetone.counter.widgets.banner.BannerLayout
+                android:id="@+id/banner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:autoPlaying="true"
+                app:centerScale="1"
+                app:itemSpace="20"
+                app:layout_constraintTop_toBottomOf="@id/tv_offers_promotions"
+                app:moveSpeed="1.8"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.paynetone.counter.widgets.SwipeToHideLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:enabled="false"
+        app:direction="bottom">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_card_view"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp">
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="#007FFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/glV3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glV3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.3333" />
+
+                <LinearLayout
+                    android:id="@+id/tab_layout_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/viewLine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_tab_one"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bg_ic_qr_selector"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tab_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_title_tab_qr"
+                        android:textColor="@color/bnv_tab_item_foreground"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab_layout_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/viewLine1"
+                    app:layout_constraintStart_toStartOf="@id/viewLine"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_tab_two"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bg_ic_service_selector"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tab_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_title_tab_service"
+                        android:textColor="@color/bnv_tab_item_foreground"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewLine1"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="#007FFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/glV6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glV6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.6666" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glV5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <LinearLayout
+                    android:id="@+id/tab_layout_dashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/viewLine1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_tab_dashboard"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_dashboard_selector"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_tab_dashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_title_tab_dashboard"
+                        android:textColor="@color/bnv_tab_item_foreground"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </com.paynetone.counter.widgets.SwipeToHideLayout>
+</LinearLayout>

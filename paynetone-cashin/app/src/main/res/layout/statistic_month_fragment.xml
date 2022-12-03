@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F9F9F9">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_transaction_dashboard"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_payment_qr"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_transaction_payment"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/ic_transaction_dashboard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_payment" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_transaction_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/str_count_transaction"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_transaction_payment"
+                        app:layout_constraintStart_toEndOf="@id/img_transaction_payment"
+                        app:layout_constraintTop_toTopOf="@id/img_transaction_payment" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_amount_transaction_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="0 VNĐ"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/img_transaction_payment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/img_transaction_payment" />
+
+                    <View
+                        android:id="@+id/viewLine"
+                        android:layout_width="0dp"
+                        android:layout_height="0.3dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:background="#D1D3D4"
+                        app:layout_constraintEnd_toEndOf="@id/tv_amount_transaction_payment"
+                        app:layout_constraintStart_toStartOf="@id/tv_name_transaction_payment"
+                        app:layout_constraintTop_toBottomOf="@id/img_transaction_payment" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_sum_amount_payment"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:src="@drawable/ic_amount_dashboard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/str_sum_amount"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_sum_amount_payment"
+                        app:layout_constraintStart_toEndOf="@id/img_sum_amount_payment"
+                        app:layout_constraintTop_toTopOf="@id/img_sum_amount_payment" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sum_amount_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="0 VNĐ"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/img_sum_amount_payment"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/img_sum_amount_payment" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_transaction_dashboard"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@id/layout_payment">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_service_dashboard"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_transaction_service"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/ic_transaction_dashboard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_service" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_transaction_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/str_count_transaction"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_transaction_service"
+                        app:layout_constraintStart_toEndOf="@id/img_transaction_service"
+                        app:layout_constraintTop_toTopOf="@id/img_transaction_service" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_amount_transaction_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="0 VNĐ"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/img_transaction_service"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/img_transaction_service" />
+
+                    <View
+                        android:id="@+id/viewLine1"
+                        android:layout_width="0dp"
+                        android:layout_height="0.3dp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:background="#D1D3D4"
+                        app:layout_constraintEnd_toEndOf="@id/tv_amount_transaction_service"
+                        app:layout_constraintStart_toStartOf="@id/tv_name_transaction_service"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name_transaction_service" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_sum_amount_service"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:src="@drawable/ic_amount_dashboard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/str_sum_amount"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_sum_amount_service"
+                        app:layout_constraintStart_toEndOf="@id/img_sum_amount_service"
+                        app:layout_constraintTop_toTopOf="@id/img_sum_amount_service" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sum_amount_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="0 VNĐ"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/img_sum_amount_service"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/img_sum_amount_service" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_transaction_dashboard"
+                    android:paddingTop="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_service">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glStartContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <View
+                        android:id="@+id/viewLine2"
+                        android:layout_width="0.3dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="#D6D6D6"
+                        app:layout_constraintBottom_toTopOf="@id/tv_name_note_quantity"
+                        app:layout_constraintStart_toStartOf="@id/glStartContent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_vnd_chart_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="@string/str_format_vnd"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="@string/str_quantity"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintEnd_toStartOf="@id/viewLine2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.github.mikephil.charting.charts.CombinedChart
+                        android:id="@+id/chart_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/viewLine2"
+                        app:layout_constraintEnd_toStartOf="@id/viewLine2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name_vnd_chart_payment" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_vnd_chart_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="@string/str_format_vnd"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/viewLine2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="@string/str_quantity"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="@id/chart_service"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.github.mikephil.charting.charts.CombinedChart
+                        android:id="@+id/chart_service"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_9sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/viewLine2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/viewLine2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_name_vnd_chart_service" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_note_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/viewLine2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_note_sales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/str_turnover"
+                            android:textColor="@color/colorBlack3"
+                            android:textSize="@dimen/_8sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:src="@drawable/ic_note_sales_dashboard"
+                            app:layout_constraintEnd_toStartOf="@id/tv_note_sales"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_note_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/viewLine2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_note_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/str_quantity"
+                            android:textColor="@color/colorBlack3"
+                            android:textSize="@dimen/_8sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:src="@drawable/ic_note_quantiy_dashboard"
+                            app:layout_constraintEnd_toStartOf="@id/tv_note_quantity"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_note_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:text="@string/str_sales_payment_qr"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/layout_note_sales"
+                        app:layout_constraintEnd_toEndOf="@id/chart_payment"
+                        app:layout_constraintStart_toStartOf="@id/chart_payment" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_note_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:text="@string/str_sales_service_qr"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/layout_note_sales"
+                        app:layout_constraintEnd_toEndOf="@id/chart_service"
+                        app:layout_constraintStart_toStartOf="@id/chart_service" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

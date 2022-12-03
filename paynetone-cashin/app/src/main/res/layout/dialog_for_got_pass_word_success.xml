@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/titleHeight"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TextViewTitleHeader"
+                android:layout_centerInParent="true"
+                android:text="@string/sr_fragment_request_otp_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+       <LinearLayout
+           android:layout_marginTop="@dimen/_30sdp"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/layout_title"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <androidx.appcompat.widget.AppCompatTextView
+               android:layout_width="match_parent"
+               android:textSize="@dimen/_15sdp"
+               android:gravity="center"
+               android:text="@string/str_completed_change_password"
+               android:layout_height="wrap_content"/>
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:lineSpacingExtra="@dimen/_3sdp"
+               android:layout_marginTop="@dimen/_5sdp"
+               android:layout_width="match_parent"
+               android:textSize="@dimen/_13sdp"
+               android:paddingStart="@dimen/_10sdp"
+               android:textColor="@color/colorBlack3"
+               android:paddingEnd="@dimen/_10sdp"
+               android:gravity="center"
+               android:text="@string/str_message_change_password_success"
+               android:layout_height="wrap_content"/>
+
+           <androidx.appcompat.widget.AppCompatButton
+               android:id="@+id/btn_completed"
+               android:layout_width="match_parent"
+               android:text="@string/str_completed"
+               android:layout_marginStart="@dimen/_10sdp"
+               android:layout_marginEnd="@dimen/_10sdp"
+               android:layout_marginTop="@dimen/_20sdp"
+               android:textColor="@color/white"
+               android:textAllCaps="false"
+               android:textSize="@dimen/_13sdp"
+               android:background="@drawable/bg_btn_agree"
+               android:layout_height="@dimen/_30sdp"/>
+       </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

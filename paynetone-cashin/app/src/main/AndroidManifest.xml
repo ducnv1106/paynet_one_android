@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.paynetone.counter">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".app.PaynetOneApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="r">
+        <activity
+            android:name=".main.SplashScreenActivity"
+            android:theme="@style/SplashscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.MainActivity"
+            android:theme="@style/MainActivityTheme"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".functions.qr.QRDynamicActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity android:name=".functions.WebViewActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".functions.payment.qr.QRActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".functions.history.HistoryActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".functions.withdraw.WithDrawActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".functions.outward.OutwardActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".login.regiter.RegisterActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.afollestad.materialcamera.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:theme="@style/MaterialCamera.CaptureActivity" />
+        <activity
+            android:name="com.afollestad.materialcamera.CaptureActivity2"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:theme="@style/MaterialCamera.CaptureActivity" />
+        <activity
+            android:name=".forgotpassword.requestotp.RequestOTPActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".forgotpassword.requestpassword.ForgotPasswordActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity android:name=".personal.PersonalActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.paynetone.counter.functions.service.topup.TopUpActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".functions.han_muc.ListBankActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".functions.media.CameraActivity"
+            android:theme="@style/CameraTheme"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:screenOrientation="portrait" />
+
+        <!-- FIREBASE_MESSAGING -->
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Set custom default icon. This is used when no icon is set for incoming notification messages. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_app" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" /> <!-- (Optional) From Android 8.0 (API level 26) and higher -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.paynetone.counter.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service android:name=".service.MyService" android:stopWithTask="false" />
+    </application>
+
+</manifest>

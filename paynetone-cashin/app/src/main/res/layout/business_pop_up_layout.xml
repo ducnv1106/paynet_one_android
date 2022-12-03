@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:translationZ="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_business_type_enterprise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/str_business_enterprise"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_business_type_household"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/str_business_household" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_business_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/str_business_personal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_business_vietlott"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/str_business_vietlott" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_business_synthetic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:text="@string/str_business_synthetic" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

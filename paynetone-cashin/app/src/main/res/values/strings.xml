@@ -1,0 +1,390 @@
+<resources>
+    <string name="app_name">Paynet One</string>
+    <string name="default_notification_channel_id">Paynet One</string>
+<!--    <string name="project_id">CHANNEL_ID</string>-->
+    <string name="error_system_upgrading">Hệ thống đang nâng cấp. Vui lòng quay lại sau!</string>
+    <string name="error_fail_default">Hệ thống đang bận. Vui lòng thử lại sau!</string>
+    <string name="error_empty_phone">Vui lòng nhập số điện thoại</string>
+    <string name="error_password_empty">Vui lòng nhập mật khẩu</string>
+    <string name="error_empty_otp">Vui lòng nhập mã xác nhận</string>
+    <string name="no_data">Không có dữ liệu</string>
+    <string name="error_warning_phone">Số điện thoại không hợp lệ</string>
+    <string name="str_unable_to_load_data">Không tải được dữ liệu!</string>
+    <string name="str_image_download_failed">Có lỗi xảy ra trong quá trình tải xuống!</string>
+    <string name="str_image_download_success">Quá trình tải xuống thành công!</string>
+
+    <string name="home_qr_online">Thanh toán \nQR động</string>
+    <string name="home_history">Lịch sử</string>
+    <string name="tab_title">Tab title</string>
+
+    <string name="cam_use_capture">Sử dụng</string>
+    <string name="cam_retry_capture">Thử lại</string>
+    <string name="permission_rationale_message">You have rejected us to apply for authorization, please agree to authorization, otherwise the function can\'t be used normally!</string>
+    <string name="permission_denied_forever_message">We need some of the permissions you rejected or the system failed to apply failed, please manually set to the page authorize, otherwise the function can\'t be used normally!</string>
+    <string name="message_no_permissions">Ứng dụng không thể hoạt động nếu không có quyền</string>
+    <string name="label_ok">OK</string>
+
+    <string name="xac_thuc_otp">Mã xác nhận được gửi đến số điện thoại </string>
+
+    <string name="str_confirm">Xác nhận</string>
+    
+    //framgent login
+    <string name="str_allow_account_personal_and_stall_login">Chỉ tài khoản cá nhân và tài khoản quầy mới được đăng nhập vào app</string>
+    <string name="hint_username">Số điện thoại</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="str_register"><font fgcolor='#007fff'>Bạn chưa có tài khoản? <u>Đăng ký</u></font></string>
+    <string name="message_field_password_invalid">Mật khẩu tối thiểu 6 ký tự</string>
+
+    //fragment main
+    <string name="str_title_tab_qr">Thanh Toán Qr</string>
+    <string name="str_title_tab_service">Dịch vụ gia tăng</string>
+    <string name="str_offers_promotions">Ưu đãi &amp; khuyến mại</string>
+    <string name="str_amount_out_ward_qr">Số tiền chờ đối soát</string>
+    <string name="str_amount_with_draw_qr">Số tiền đã đối soát</string>
+    <string name="str_amount_out_ward_gtgt">Hoa hồng chờ đối soát</string>
+    <string name="str_amount_with_draw_gtgt">Hoa hồng đã đối soát</string>
+
+    //qr dynamic fragment
+    <string name="str_title_qr_dynamic">Tạo mã QR Code thanh toán</string>
+    <string name="str_viettel_money">Viettel\n money</string>
+    <string name="str_zalo_pay">ZaloPay</string>
+    <string name="str_shoppe_pay">Shoppe\nPay</string>
+    <string name="str_vn_pay">VNPay</string>
+    <string name="str_moca">Grab Pay</string>
+    <string name="str_viet_qr">VietQR</string>
+    <string name="str_error_amount">Số tiền tối thiểu là 10.000đ</string>
+
+    //qr fragment
+    <string name="str_qr_viettel">Sử dụng ứng dụng Viettel money để quét mã</string>
+    <string name="str_qr_zalo">Sử dụng ứng dụng ZaloPay để quét mã</string>
+    <string name="str_qr_shopee">Sử dụng ứng dụng ShopeePay để quét mã</string>
+    <string name="str_qr_vn_pay">Sử dụng ứng dụng VNPay để quét mã</string>
+    <string name="str_qr_moca">Sử dụng ứng dụng Moca để quét mã</string>
+    <string name="str_qr_viet_qr">Sử dụng ứng dụng VietQR để quét mã</string>
+    <string name="str_code_order">Mã đơn hàng:  </string>
+
+    // merchant fragment
+    <string name="str_title_fragment_merchant">Hồ sơ Merchant</string>
+    <string name="st_profile_status">Trạng thái hồ sơ</string>
+    <string name="str_service">Dịch vụ</string>
+    <string name="str_qr_code">QR Code</string>
+    <string name="str_business_registration_information">Thông tin đăng ký kinh doanh</string>
+    <string name="str_phone_number">Số điện thoại</string>
+    <string name="str_tax_code_required">Mã số thuế <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_tax_code">Mã số thuế </string>
+    <string name="str_fax">Fax</string>
+    <string name="str_hint_fax">Nhập số fax</string>
+    <string name="str_business_registration_number">Mã số đăng ký hộ kinh doanh</string>
+    <string name="str_hint_business_registration_number">Nhập mã số đăng ký hộ kinh doanh</string>
+    <string name="str_company_name">Tên công ty <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_company_name">Nhập tên công ty</string>
+    <string name="st_name_qr">Tên in trên QR <font fgcolor='#EA5151'>*</font></string>
+    <string name="st_hint_name_qr">Nhập tên in trên QR</string>
+
+    <string name="str_hint_tax_code">Nhập mã số thuế</string>
+    <string name="str_select_service_type">Chọn Loại dịch vụ hàng hóa</string>
+    <string name="str_province_city">Chọn Tỉnh/Thành phố</string>
+    <string name="str_district">Chọn Quận/Huyện</string>
+    <string name="str_wards">Chọn Xã/Phường</string>
+    <string name="st_full_name">Họ tên</string>
+    <string name="str_number_gttt">Nhập số giấy tờ tùy thân</string>
+    <string name="str_photo_font">Ảnh CMND/CCCD/ Hộ chiếu mặt trước <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_photo_backside">Ảnh CMND/CCCD/ Hộ chiếu mặt sau <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_app">Hình chụp app </string>
+    <string name="str_billing_information">Thông tin thanh toán</string>
+    <string name="str_account_number">Số tài khoản</string>
+    <string name="str_select_bank">Chọn ngân hàng</string>
+    <string name="str_branch_bank">Chi nhánh</string>
+    <string name="str_update">Cập nhật</string>
+    <string name="str_formality_type">Hình thức kinh doanh</string>
+    <string name="str_formality_offline">Kinh doanh Offline</string>
+    <string name="str_formality_online">Kinh doanh Online</string>
+    <string name="str_name_business_service">Hàng hóa kinh doanh <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_province">Tỉnh/Thành phố <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_district">Quận/huyện <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_ward">Xã/phường <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_address">Địa chỉ <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_number_cttt_requied">Số GTTT <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_personal_bank_required">Tên chủ tài khoản <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_personal_bank">Nhập tên chủ tài khoản</string>
+    <string name="str_bank_required">Ngân hàng <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_business_registration_required">Chứng nhận đăng ký kinh doanh / hộ kinh doanh <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_business_registration">Chứng nhận đăng ký kinh doanh / hộ kinh doanh </string>
+    <string name="str_address_sale_required">Hình chụp điểm bán hàng <b><font fgcolor='#EA5151'>*</font></b></string>
+    <string name="str_address_sale">Hình chụp điểm bán hàng</string>
+    <string name="str_image_tax_code_required">Ảnh mã số thuế <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_image_tax_code">Ảnh mã số thuế</string>
+    <string name="str_other">Các chứng từ khác (nếu có)</string>
+    <string name="str_service_qr">Thanh toán QR</string>
+    <string name="str_service_tra_sau">Mua ngay - trả sau</string>
+    <string name="str_name_service">Dịch vụ <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_qr_option">Dịch vụ yêu cầu cung cấp<font fgcolor='#EA5151'>*</font></string>
+    <string name="str_qr_code_dong">QR code động</string>
+    <string name="str_qr_code_tinh">QR code tĩnh</string>
+
+    <string name="str_business_type">Loại hình kinh doanh</string>
+    <string name="str_business_enterprise">Doanh nghiệp</string>
+    <string name="str_business_household">Hộ kinh doanh</string>
+    <string name="str_business_personal">Cá nhân kinh doanh</string>
+    <string name="str_business_vietlott">Cửa hàng xổ số Vietlott</string>
+    <string name="str_business_synthetic">Cửa hàng xổ số tổng hợp</string>
+    <string name="str_waiting_approval">Chờ phê duyệt</string>
+    <string name="str_add_profile">Bổ sung hồ sơ</string>
+    <string name="str_approved">Đã phê duyệt</string>
+    <string name="str_refuse">Từ chối</string>
+    <string name="str_representative_information">Thông tin người đại diện</string>
+    <string name="str_detailed_address">Địa chỉ chi tiết</string>
+    <string name="str_business_information">Thông tin kinh doanh</string>
+
+    //fragment_request_opt
+    <string name="str_confirm_mobile_number">Vui lòng nhập chính xác số điện thoại đã đăng ký tài khoản kinh doanh. <b>\nMã xác thực sẽ được gửi để xác minh tài khoản</b></string>
+    <string name="str_send_request">Xác nhận</string>
+    <string name="str_account_already"><font fgcolor='#373636'>Bạn đã có tài khoản?</font> <font fgcolor='#007fff'>Đăng nhập</font></string>
+    <string name="sr_fragment_request_otp_title">Quên mật khẩu</string>
+    <string name="str_forgot_your_password"><u>Quên mật khẩu</u></string>
+    <string name="str_did_not_phone_number">Bạn chưa nhập Số điện thoại</string>
+
+    //fragment_forgot_password
+    <string name="str_fragment_forgot_password_title">Quên mật khẩu</string>
+    <string name="str_new_password">Nhập mật khẩu mới</string>
+    <string name="str_confirm_password">Xác nhận mật khẩu</string>
+    <string name="str_opt_zalo_fragment_forgot_password">Bạn không nhận được mã OTP? </string>
+    <string name="str_enter_phone_number">Nhập số điện thoại</string>
+    <string name="str_enter_otp">Nhập mã OTP</string>
+    <string name="str_not_enter_phone_number">Bạn chưa nhập Số điện thoại</string>
+    <string name="str_not_enter_password">Bạn chưa nhập Mật khẩu</string>
+    <string name="str_not_enter_confirm_password">Bạn chưa nhập lại mật khẩu</string>
+    <string name="str_not_match_password">Mật khẩu mới và xác nhận không trùng nhau</string>
+    <string name="str_not_enter_otp">Bạn chưa nhập OTP</string>
+    <string name="str_change_password_success">Thay đổi mật khẩu thành công</string>
+    <string name="str_name_confirm_password">Xác nhận mật khẩu <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_note_forgot_password">Lưu ý: Độ dài mật khẩu yêu cầu từ 6-50 ký tự, bao gồm ít nhất một ký tự viết thường, một ký tự chữ số, một ký tự đặc biệt và một ký tự viết hoa</string>
+    <string name="str_message_field_password_invalid">Mật khẩu có độ dài tối thiểu 6 ký tự và tối đa 50 ký tự</string>
+    <string name="str_message_field_password_not_strong">Mật khẩu gồm ít nhất một ký tự viết thường, một ký tự chữ số,một ký tự đặc biệt và một ký tự hoa</string>
+    <string name="str_name_phone_number">Số điện thoại <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_confirm_otp">Nhập mã xác thực \nQuý khách vui lòng nhập mã OTP đã được \ngửi về Zalo</string>
+    <string name="str_link">Link website, link tải app <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_link">Nhập link website, link tải app</string>
+    <string name="str_completed">Hoàn tất</string>
+    <string name="str_completed_change_password">Hoàn tất đổi mật khẩu</string>
+    <string name="str_message_change_password_success">Chúc mừng bạn đã đổi mật khẩu tài khoản Merchant Paynet One thành công</string>
+
+
+
+    // rút tiền
+    <string name="str_with_draw_bank">Tài khoản ngân hàng</string>
+    <string name="str_with_draw_wallet">Qua ví điện tử</string>
+    <string name="str_with_draw_vietlott">Hạn mức Vietlott</string>
+    <string name="str_with_draw_han_muc">Tài khoản hạn mức</string>
+    <string name="str_not_enter_receive_full_name">Bạn chưa nhập tên người nhận</string>
+    <string name="str_not_enter_amount">Bạn chưa nhập Số tiền</string>
+    <string name="str_not_enter_wallet">Bạn chưa chọn ví rút tiền</string>
+    <string name="str_not_enter_branch">Bạn chưa chọn chi nhánh</string>
+    <string name="str_not_enter_store">Bạn chưa chọn cửa hàng</string>
+    <string name="str_with_draw">Hình thức rút tiền <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_bank">Tên ngân hàng <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_account_number_required">Số tài khoản <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_full_name_personal_required">Họ và tên <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_office_required">Chức vụ </string>
+    <string name="str_hint_office">Nhập chức vụ</string>
+    <string name="str_amount_required">Số tiền <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_name_wallet_required">Tên ví điện tử <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_phone_number_required">Số điện thoại <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_amount">Số tiền</string>
+    <string name="str_full_name_personal">Họ và tên</string>
+    <string name="str_selected_wallet">--Chọn ví điện tử--</string>
+    <string name="str_post_id">PostID</string>
+    <string name="str_post_id_required">PosID<font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_post_id">Nhập PostID</string>
+    <string name="str_branch_required">Chi nhánh <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_store_required">Cửa hàng <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_branch_hint_name">--Chọn chi nhánh--</string>
+    <string name="str_store_hint_name">--Chọn cửa hàng--</string>
+    <string name="str_message_payment_success">Yêu cầu rút tiền của bạn đã được ghi nhận và xử lý trong vòng 24h làm việc</string>
+    <string name="str_with_draw_account">Tài khoản rút tiền <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_with_draw_account_qr">Tài khoản đã đối soát</string>
+    <string name="str_with_draw_account_gtgt">Tài khoản hoa hồng đã đối soát</string>
+
+    <string name="str_allow_running_background">Không hạn chế hoạt động dưới nền cho ứng dụng.</string>
+
+    
+    //fragment_service
+    <string name="str_naptien_phone">Nạp tiền điện thoại</string>
+    <string name="str_thue_bao_tra_sau">Thuê bao trả sau</string>
+    <string name="str_nap_the_game">Nạp thẻ game</string>
+    <string name="str_topup_data">Topup data</string>
+    <string name="str_tien_dien">Tiền điện</string>
+    <string name="str_internet">Internet</string>
+    <string name="str_truyen_hinh">Truyền hình</string>
+    <string name="str_mua_hang_tra_cham">Mua hàng trả chậm</string>
+
+    //dialog term
+    <string name="str_content_term_policie">   <b>I. CHÍNH SÁCH HỦY GIAO DỊCH</b>\n
+        <i>1. Điều kiện hủy giao dịch:</i>\n
+Khách hàng có thể hủy giao dịch kể từ lúc bấm nút "Xác nhận" đến trước thời điểm thanh toán thành công.\n
+        <i>2. Phương thức hủy giao dịch:</i>\n
+Sau khi tạo mã QR để thanh toán thành công, khi muốn huỷ giao dịch, quý khách hàng vui lòng tạo đơn hàng khác.\n
+<b>II. CHÍNH SÁCH HOÀN TIỀN</b>\n
+        <i>1. Lệ phí hoàn trả:</i> phí hoàn trả sẽ hoàn toàn do Paynet Việt Nam chi trả hoàn toàn nếu lỗi đó thuộc về công ty.\n
+        <i>2. Hình thức hoàn trả:</i> Công ty cam kết hoàn trả 100% phí mà khách hàng đã thanh toán cho chúng tôi thông qua các hình thức như: tài khoản Paynet One hoặc chuyển khoản cho khách hàng. Thời gian hoàn lại trong vòng 10 ngày làm việc.\n
+        <i>3. Điều kiện áp dụng:</i>\n
+Theo các điều khoản và điều kiện được quy định trong Chính sách Hoàn tiền này và tạo thành một phần của Điều khoản dịch vụ, Paynet Việt Nam đảm bảo quyền lợi của Người mua bằng cách cho phép gửi yêu cầu hoàn trả tiền trước khi hết hạn.
+Paynet One Đảm bảo là một dịch vụ được cung cấp bởi Paynet Việt Nam, theo yêu cầu của Người dùng, để hỗ trợ Người dùng trong việc giải quyết các xung đột có thể phát sinh trong quá trình giao dịch. Người dùng có thể liên hệ với nhau để thỏa thuận về việc giải quyết tranh chấp của họ hoặc báo cáo lên chính quyền địa phương có liên quan nhờ hỗ trợ họ trong việc giải quyết bất kỳ tranh chấp xảy ra trước, trong hoặc sau khi sử dụng Paynet One đảm bảo.\n
+        <b>III. CHÍNH SÁCH BẢO MẬT THÔNG TIN</b>\n
+        <i>1. Đối tượng và phạm vi áp dụng</i>\n
+        <b>Đối tượng áp dụng:</b>\n
+- Người sử dụng là cá nhân, tổ chức, doanh nghiệp.\n
+        <b>Phạm vi áp dụng:</b>\n
+- Việc thu thập, xử lý, sử dụng, lưu trữ, và bảo vệ Thông tin cá nhân của Bạn khi sử dụng sản phẩm, dịch vụ do Paynet Việt Nam cung ứng.\n
+- Các dịch vụ trực tuyến, phương tiện, công cụ, ứng dụng, dịch vụ liên quan đến việc cung ứng sản phẩm, dịch vụ của Paynet Việt Nam, bất kể Bạn sử dụng phương thức nào để truy cập hoặc sử dụng.\n
+        <i>2. Các thông tin Paynet Việt Nam thu thập</i>\n
+Nhằm bảo vệ quyền lợi của Bạn tại Paynet Việt Nam, thực hiện các quy định pháp luật khi cung ứng dịch vụ Trung gian thanh toán, thương mại điện tử. Paynet Việt Nam tiến hành các hoạt động thu thập thông tin về Bạn gồm các loại thông tin sau đây:\n
+        <b>Thông tin mà Bạn cung cấp:</b>\n
+- Thông tin Bạn cung cấp khi thiết lập quan hệ sử dụng dịch vụ, hoặc hợp tác, hoặc thông qua việc tạo tài khoản dịch vụ trên website, ứng dụng của Paynet Việt Nam, hoặc khi sử dụng một tính năng, sản phẩm mới của Paynet Việt Nam.\n
+- Các thông tin cập nhật, sửa đổi, bổ sung, thay thế;\n
+- Thông tin về các giao dịch và hoạt động của Bạn;\n
+- Thông tin, dữ liệu về việc sử dụng tính năng dịch vụ của Bạn (nếu có);\n
+- Các thông tin mà Bạn cung cấp khi phát sinh yêu cầu từ Paynet Việt Nam, hoặc từ Bạn.\n
+        <b>Thông tin được thu thập tự động:</b>\n
+- Thông tin được gửi đến Paynet Việt Nam từ máy tính, điện thoại, hoặc các thiết bị khác mà Bạn sử dụng để tải, truy cập như: Dữ liệu các website, ứng dụng Bạn Truy cập, địa chỉ IP, ID nhận dạng thiết bị, loại thiết bị, thông tin máy tính, thiết bị di động, thiết bị mạng, số liệu thống kê hiển thị của website, ứng dụng truy cập và các dữ liệu cơ bản khác;\n
+- Khi Bạn truy cập sản phẩm, dịch vụ của Paynet Việt Nam, hoặc truy cập website, ứng dụng của bên thứ ba có hợp tác dịch vụ trực tuyến mà Paynet Việt Nam cung cấp, Paynet Việt Nam và các đối tác kinh doanh và nhà cung cấp của Paynet Việt Nam có thể sử dụng cookie và các công cụ kiểm tra (gọi chung là Cookies) để nhận diện Khách hàng là một Người sử dụng và để tùy chỉnh trải nghiệm trực tuyến của Bạn, Dịch vụ Khách hàng sử dụng cũng như nội dung và quảng cáo trực tuyến khác; đo lường hiệu quả của các chương trình khuyến mãi và thực hiện phân tích; và để giảm thiểu rủi ro, ngăn chặn gian lận tiềm ẩn và thúc đẩy niềm tin và sự an toàn đối với các dịch vụ của Paynet Việt Nam.\n
+- Một số khía cạnh và tính năng của Dịch vụ, sản phẩm của Paynet Việt Nam chỉ khả dụng khi sử dụng Cookies, vì vậy nếu Bạn chọn tắt hoặc từ chối Cookies, việc sử dụng Dịch vụ của bạn có thể bị hạn chế hoặc không thể thực hiện.\n
+- Khi bạn sử dụng thiết bị để truy cập, sử dụng dịch vụ, tùy theo cấu trúc, tính năng, thiết kế từng loại thiết bị, nhà cung cấp, cho phép Bạn thiết lập, cấu hình, lựa chọn chức năng cho phép Dịch vụ, sản phẩm của Paynet Việt Nam được truy cập, sử dụng một, một số, hoặc toàn bộ thông tin nhất định theo tùy chọn của bạn.\n
+Thông tin được tạo ra bởi hệ thống của Paynet Việt Nam, hoặc các kênh hỗ trợ của Paynet Việt Nam như:\n
+- Thông tin ghi nhận Bạn trên hệ thống như Mã định danh, AppID, và bất kỳ thông tin nào khác mà hệ thống của Paynet Việt Nam tạo ra để để nhận diện bạn khi truy cập, sử dụng sản phẩm, dịch vụ của Paynet Việt Nam.\n
+Thông tin Bạn cung cấp tại các phương tiện thông tin công khai như Fanpage của Paynet Việt Nam trên Facebook, Zalo, website, ứng dụng của Paynet Việt Nam\n
+Thông tin khác mà Paynet Việt Nam cần nhằm thực hiện nghĩa vụ pháp lý theo quy định pháp luật, thông lệ quốc tế về cung cấp dịch vụ thanh toán, dịch vụ ngân hàng và các dịch vụ liên quan.\n
+        <i>3. Mục đích thu thập thông tin</i>\n
+Paynet Việt Nam thu thập thông tin để sử dụng cho các mục đích dưới đây:\n
+Để vận hành và cung cấp dịch vụ của Paynet Việt Nam bao gồm:\n
+- Cung cấp các dịch vụ và tính năng cho Bạn;\n
+- Cung cấp, duy trì và cải thiện các sản phẩm và dịch vụ của Paynet Việt Nam.\n
+- Kiểm tra, xác minh tính chính xác, trung thực, đầy đủ các thông tin cung cấp; đánh giá, phân loại mức độ rủi ro theo quy định pháp luật Việt Nam;\n
+- Bảo vệ quyền lợi của Bạn đối với các hoạt động sử dụng dịch vụ, tính năng do Paynet Việt Nam cung ứng trong đó có các thông tin tài chính.\n
+- Xác thực thông tin, quyền truy cập của Bạn trong suốt quá trình tạo lập, sử dụng dịch vụ, hợp tác giữa Paynet Việt Nam và Bạn.\n
+- Ghi nhớ thông tin để Bạn không phải nhập lại trong quá trình truy cập hoặc lần tiếp theo khi Bạn truy cập vào dịch vụ.\n
+- Liên lạc với Khách hàng và đối tác về tài khoản, dịch vụ, nội dung hợp tác thông qua các cuộc gọi thoại, tin nhắn SMS, ZaloOA, ZMS hoặc email hay có thể là bằng văn bản hoặc các hình thức khác;\n
+- Tạo kết nối dịch vụ giữa Tài khoản của Bạn và tài khoản hoặc nền tảng của Bên thứ ba (như các tổ chức tín dụng, tổ chức cung ứng dịch vụ chuyển mạch tài chính và bù trừ điện tử, Bên cung cấp hàng hóa, dịch vụ, bên thứ ba khác theo sự đồng ý của Bạn trong từng trường hợp);\n
+- Kiểm tra khả năng tín nhiệm và khả năng thanh toán hoặc đánh giá, phát hiện và/hoặc khắc phục gian lận, giả mạo hoặc các hành vi có thể bị cấm hoặc vi phạm pháp luật.\n
+- Để bảo vệ bạn khỏi những hành vi gian lận sử dụng sai mục đích các thông tin của Bạn, Paynet Việt Nam có thể thu thập thông tin về bạn và các tương tác của Bạn, đánh giá máy tính, điện thoại và các thiết bị khác mà Bạn dùng để truy cập vào dịch vụ của Paynet Việt Nam để nhận dạng bất kỳ phần mềm, hay hoạt động xâm phạm nào.\n
+Các thông tin khác để đánh giá việc đã tuân thủ, đang tuân thủ và có thể tiếp tục tuân thủ tất cả các nghĩa vụ của Bạn theo các Thỏa thuận sử dụng dịch vụ Trung gian thanh toán, Điều Khoản Chung, Hợp Đồng Điện Tử, các quy định, cảnh báo, thông báo được Paynet Việt Nam đăng tải công khai trên http://paynetvn.com hoặc thông tin đến từng Khách hàng qua tin nhắn (SMS), Notify, ZaloOA, điện thoại, hay công cụ khác.\n
+Để thực hiện các hoạt động tuân thủ quy định pháp luật, yêu cầu của cơ quan quản lý đối với hoạt động kinh doanh của Paynet Việt Nam.\n
+Thực hiện cam kết của Paynet Việt Nam với các nhà cung cấp hàng hóa dịch vụ mà Bạn mua bán hàng hóa, dịch vụ (không bao gồm các thông tin cá nhân theo quy định pháp luật dùng để định danh Bạn);\n
+Quản lý truy cập, và thực hiện các biện pháp an toàn, an ninh và tính toàn vẹn cho các dịch vụ mà Paynet Việt Nam cung cấp cho Bạn.\n
+Hỗ trợ Bạn: Thông qua các thông tin thu thập được, Paynet Việt Nam tiến hành các hoạt động hỗ trợ một cách tốt nhất các vấn đề phát sinh đối với Bạn trong quá trình sử dụng như giải quyết thắc mắc, hỗ trợ tra soát, khiếu nại, theo dõi, cải thiện dịch vụ hỗ trợ khách hàng,…\n
+Nghiên cứu và phát triển: Paynet Việt Nam có thể sử dụng thông tin thu thập được để phục vụ công tác nghiên cứu, phát triển nhằm nâng cao chất lượng dịch vụ, quản lý và bảo vệ các thông tin, hệ thống kỹ thuật dịch vụ, đo lường hiệu suất dịch vụ và cải thiện sản phẩm, dịch vụ do Paynet Việt Nam cung ứng.\n
+Quảng bá về các sản phẩm, dịch vụ, chương trình khuyến mại, nghiên cứu, khảo sát, tin tức, thông tin cập nhật, các sự kiện, các quảng cáo và nội dung có liên quan về các dịch vụ của Paynet Việt Nam và các dịch vụ của các đối tác có hợp tác với Paynet Việt Nam.\n
+Các thủ tục và yêu cầu pháp lý Paynet Việt Nam có thể sử dụng thông tin thu thập được để điều tra hoặc giải quyết các khiếu nại hoặc tranh chấp liên quan đến việc sử dụng dịch vụ của Bạn, hoặc các hoạt động khác được pháp luật hiện hành cho phép.\n
+        <i>4. Cung cấp thông tin</i>\n
+- Paynet Việt Nam cam kết bảo mật thông tin của Bạn theo đúng quy định pháp luật về bảo vệ quyền riêng tư. Paynet Việt Nam không cung cấp, chia sẻ, phát tán thông tin cá nhân của Bạn mà Paynet Việt Nam đã thu thập cho bên thứ ba trừ trường hợp được Bạn yêu cầu, đồng ý hoặc theo các quy định pháp luật hiện hành.\n
+- Trong trường hợp cung cấp thông tin theo yêu cầu của Bạn, yêu cầu đó có thể Có thể bằng văn bản, hoặc thông qua tính năng dịch vụ do Paynet Việt Nam cung ứng, email, điện thoại hoặc bất kỳ hình thức nào khác có ghi nhận nội dung yêu cầu hoặc đồng ý của bạn.\n
+        <i>5. Thời hạn lưu trữ thông tin thu thập</i>\n
+- Paynet Việt Nam lưu trữ thông tin để thực hiện các nghĩa vụ pháp lý theo quy định pháp luật Việt Nam và thông lệ quốc tế lĩnh vực tài chính, và/hoặc các mục đích kinh doanh hợp pháp của Paynet Việt Nam theo quy định pháp luật và quy định của Ngân hàng Nhà nước.\n
+- Việc lưu trữ được thực hiện trên nguyên tắc đảm bảo tuân thủ các quy định pháp luật hiện hành, và tiêu chuẩn, thông lệ quốc tế về lưu trữ, xử lý thông tin trong lĩnh vực tài chính, tiền tệ mà Paynet Việt Nam có tham gia.\n
+- Thời gian lưu trữ có thể được Paynet Việt Nam thực hiện tối thiểu theo quy định pháp luật với từng loại thông tin thu thập.\n
+        <i>6. Sửa đổi, bổ sung, thay đổi chính sách quyền riêng tư</i>\n
+- Bất kỳ sửa đổi, bổ sung, thay thế nào đối với Chính sách Quyền riêng tư này sẽ được thông báo bởi Paynet Việt Nam trên website chính thức https://paynetvn.com/ hoặc ứng dụng cung ứng dịch vụ Paynet Việt Nam.\n
+- Trừ trường hợp nội dung thông báo sửa đổi, bổ sung thay thế có quy định khác về thời gian hiệu lực, các sửa đổi, bổ sung thay thế sẽ được áp dụng ngay tại thời điểm công khai.\n
+- Trong phạm vi được pháp luật cho phép, việc Bạn tiếp tục sử dụng các dịch vụ do Paynet Việt Nam cung ứng, đồng nghĩa với việc Bạn đồng ý với các nội dung cập nhật tại Chính sách này.\n
+        <i>7. Luật điều chỉnh</i>\n
+Chính sách quyền riêng tư này được giải thích và thi hành theo Pháp luật Việt Nam.
+</string>
+
+    //dialog contact
+    <string name="str_title_dialog_contact">CÔNG TY CỔ PHẦN MẠNG THANH TOÁN PAYNET VIỆT NAM</string>
+    <string name="str_email_contact">hotro@paynetvn.com</string>
+    <string name="str_phone_contact">+84 93 173 98 89</string>
+    <string name="str_facebook_contact">https://www.facebook.com/paynetvnn/</string>
+    <string name="str_done">Xong</string>
+
+    //dialog phone contact
+    <string name="str_no_memory_assess">Không có quyền truy cập bộ nhớ!</string>
+    <string name="str_no_call_phone_assess">Không có quyền gọi điện thoại!</string>
+    <string name="str_no_call_read_contact_assess">Không có quyền truy cập danh bạ!</string>
+
+    //dialog han muc
+    <string name="str_han_muc_bank">Nạp hạn mức qua tài khoản ngân hàng\nPaynet Việt Nam</string>
+    <string name="str_han_muc_wallet">Nạp hạn mức qua tài khoản ví điện tử\n(MoMo, Viettel Money, ZaloPay)</string>
+    <string name="str_han_muc_doi_soat">Nạp hạn mức từ tiền đã đối soát.</string>
+    <string name="str_han_muc_post_id">Rút về POSID</string>
+    <string name="str_guide_recharge"><u><font fgcolor='#BA2027'>Hướng dẫn nạp tiền</font></u></string>
+    <string name="str_guide_note">Trong vòng 24h làm việc nếu không nhận được \nhạn mức, quý khách vui lòng liên hệ hotline \n+<u>84 93 173 98 89</u> để được hỗ trợ</string>
+
+    // dialog guide recharge
+    <string name="str_content_guide1">+ Nội dung chuyển khoản: </string>
+    <string name="str_content_guide2">+ Số tiền tối thiểu mỗi lần chuyển là 200.000đ</string>
+    <string name="str_title_guide">Khi nạp hạn mức bằng hình thức chuyển khoản ngân hàng:</string>
+    <string name="str_header_guild">LƯU Ý</string>
+
+    //item han muc bank
+    <string name="str_full_name_bank">Chủ TK: CÔNG TY CỔ PHẦN MẠNG THANH TOÁN PAYNET VIỆT NAM</string>
+    <string name="str_name_bank_han_muc">Ngân hàng TMCP Sài Gòn – Hà Nội Chi nhánh Tây Hà Nội – TP. Hà Nội</string>
+    <string name="str_account_number_bank">Số tài khoản: : 059.110.207.5003 </string>
+
+    // fragment_account
+    <string name="str_name_merchant">Tên merchant <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_name_merchant">Nhập tên merchant</string>
+    <string name="str_name_email">Email <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_name_email">Nhập email</string>
+    <string name="str_name_password">Mật khẩu <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_name_password">Nhập mật khẩu</string>
+    <string name="str_hint_name_confirm_password">Nhập lại mật khẩu</string>
+    <string name="str_name_mobile_number">Số điện thoại đăng nhập <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_name_mobile_number">Nhập số điện thoại</string>
+    <string name="str_name_otp">OTP  <font fgcolor='#EA5151'>*</font></string>
+    <string name="str_hint_name_otp">Nhập mã OTP</string>
+    <string name="str_name_request_otp">Lấy OTP</string>
+    
+    <string name="str_rules">Bằng việc chọn “Tiếp tục” , bạn đã đồng ý với <font fgcolor='#007FFF'>Điều khoản và Điều kiện</font> của Paynet</string>
+
+    // pincode fragment
+    <string name="str_name_pin_code_new">Nhập mã PIN mới </string>
+    <string name="str_name_confirm_pin_code">Nhập lại mã PIN </string>
+    <string name="str_name_pin_code">Nhập mã PIN </string>
+    <string name="str_title_new_pin_code">Tạo mã PIN</string>
+    <string name="str_title_change_pin_code">Đổi mã PIN</string>
+    <string name="str_not_enter_pin_code">Bạn chưa nhập mã PIN</string>
+    <string name="str_not_match_pin_code">Mã PIN không khớp</string>
+    <string name="str_setting_pin_code_success">Bạn đã cài đặt mã PIN thành công!</string>
+    <string name="str_message_not_setting_pin_code">Quý khách chưa cài đặt mã PIN,\n vui lòng tạo mã PIN để sử dụng dịch\n vụ gia tăng</string>
+    <string name="str_note_pin_code">Mã PIN là mã để mở khóa trước khi thực hiện các giao dịch với các dịch vụ giá trị gia tăng</string>
+
+    <string name="str_hint_edt_search_bank">Nhập tên ngân hàng</string>
+    <string name="str_title_dialog_list_bank_qr">Tất cả ngân hàng</string>
+    
+    <string name="str_not_authorized_function">Bạn không đủ quyền thực hiện chức năng</string>
+    <string name="str_hint_search_contacts">Nhập tên hoặc số điện thoại</string>
+    <string name="str_title_contact">Danh bạ</string>
+    <string name="str_close">Đóng</string>
+
+    // fragment dashboard
+    <string name="str_title_tab_dashboard">Báo cáo</string>
+    <string name="str_dashboard_to_day">Báo cáo theo ngày hiện tại</string>
+    <string name="str_dashboard_day">Báo cáo theo 3 Ngày</string>
+    <string name="str_dashboard_week">Báo cáo theo Tuần</string>
+    <string name="str_dashboard_month">Báo cáo theo Tháng</string>
+    <string name="str_dashboard_quarter">Báo cáo theo Quý</string>
+    <string name="str_title_statistic_day">Thống kê ngày</string>
+    <string name="str_title_statistic_month">Thống kê tháng</string>
+    <string name="str_count_transaction">Số lượng giao dịch</string>
+    <string name="str_sum_amount">Tổng số tiền</string>
+    <string name="str_format_vnd">Nghìn đồng</string>
+    <string name="str_quantity">Sản lượng</string>
+    <string name="str_sales_payment_qr">Doanh số \nThanh toán QR</string>
+    <string name="str_sales_service_qr">Doanh số \nDịch vụ gia tăng</string>
+    <string name="str_payment_qr">Thanh toán QR</string>
+    <string name="str_service_dashboard">Dịch vụ gia tăng</string>
+    <string name="str_turnover">Doanh số</string>
+
+    //dialog change password
+    <string name="str_title_change_password">ĐỔI MẬT KHẨU</string>
+    <string name="str_not_entered_current_password">Xin vui lòng nhập mật khẩu cũ!</string>
+    <string name="str_not_entered_new_password">Xin vui lòng nhập mật khẩu mới!</string>
+    <string name="str_not_entered_confirm_password">Xin vui lòng xác nhận mật khẩu mới!</string>
+<!--    <string name="str_not_match_password">Mật khẩu không khớp</string>-->
+<!--    <string name="str_change_password_success">Thay đổi mật khẩu thành công</string>-->
+    <string name="str_old_equals_new_password">Mật khẩu mới không được trùng với mật khẩu cũ!</string>
+    <string name="str_download_image_success">Tải hình ảnh thành công!</string>
+
+
+</resources>

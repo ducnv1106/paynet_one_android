@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007fff</color>
+    <color name="colorPrimaryDark">#007fff</color>
+    <color name="colorAccent">#007fff</color>
+    
+    <color name="fade_color_primary">#3C007FFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#2D2D2D</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="opacity">#666666</color>
+    <color name="backgroundHome">#F5F5F5</color>
+    <color name="close">#F44336</color>
+    <color name="order_status_cancel">#ff4747</color>
+    <color name="order_status_success">#71c016</color>
+    <color name="order_status_wait">#FF9800</color>
+
+    //
+    <color name="colorBlack1">#B7000000</color>
+    <color name="colorBlack2">#2D2D2D</color>
+    <color name="colorBlack3">#D92D2D2D</color>
+
+    <color name="grey_600">#828282</color>
+    <color name="grey_300">#E6E6E6</color>
+    <color name="grey_400">#B8B8B8</color>
+
+
+    <color name="colorSwitchCompat">#D6D6D6</color>
+    <color name="colorWebView">#f5f5f5</color>
+    <color name="colorLightGray">#D3D3D3</color>
+    <color name="colorButtonGreyBg">#444444</color>
+
+
+</resources>

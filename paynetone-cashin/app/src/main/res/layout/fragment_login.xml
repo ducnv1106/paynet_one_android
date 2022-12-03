@@ -1,0 +1,149 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:src="@drawable/logo_paynet_one" />
+
+        <TextView
+            android:id="@+id/loginTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:lineSpacingExtra="5dp"
+            android:text="Đăng nhập"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_25sdp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <!--        <com.google.android.material.textfield.TextInputLayout-->
+            <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:hint="Số điện thoại"-->
+            <!--            app:endIconMode="clear_text">-->
+
+            <!--            <com.google.android.material.textfield.TextInputEditText-->
+            <!--                android:id="@+id/edt_mobile_number"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:maxLength="10"-->
+            <!--                android:inputType="number" />-->
+
+            <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldMobileNumber"
+                style="@style/UsernameFieldStyle"
+                app:errorTextAppearance="@style/CustomTextInputLayoutStyle.ErrorTextStyle"
+                app:hintTextAppearance="@style/CustomTextInputLayoutStyle.HintTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                app:boxBackgroundColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/loginTitleTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_mobile_number"
+                    style="@style/UsernameEditTextStyle"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldPassword"
+                style="@style/PasswordFieldStyle"
+                app:errorTextAppearance="@style/CustomTextInputLayoutStyle.ErrorTextStyle"
+                app:hintTextAppearance="@style/CustomTextInputLayoutStyle.HintTextStyle"
+                android:layout_width="match_parent"
+                app:endIconDrawable="@drawable/password_icon"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12sdp"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:textSize="@dimen/_11sdp"
+            android:text="Đăng nhập" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/str_register"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="@string/str_forgot_your_password"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+</ScrollView>

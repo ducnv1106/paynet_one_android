@@ -1,0 +1,8 @@
+package com.paynetone.counter.model.request
+
+import com.google.gson.annotations.SerializedName
+
+data class PaynetGetByParentRequest(
+    @SerializedName("ParentID")
+    val parentID:Int
+)

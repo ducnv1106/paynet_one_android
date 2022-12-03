@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tv_business_type_enterprise"
+        android:title="Doanh nghiêp">
+    </item>
+    <item
+        android:id="@+id/tv_business_type_household"
+        android:title="Hộ kinh doanh">
+    </item>
+    <item
+        android:id="@+id/tv_business_type_personal"
+        android:title="Cá nhân kinh doanh">
+    </item>
+    <item
+        android:id="@+id/tv_business_type_vietlott"
+        android:title="Cửa hàng xổ số Vietlott">
+    </item>
+    <item
+        android:id="@+id/tv_business_type_synthetic"
+        android:title="Cửa hàng xổ số tổng hợp">
+    </item>
+
+</menu>
