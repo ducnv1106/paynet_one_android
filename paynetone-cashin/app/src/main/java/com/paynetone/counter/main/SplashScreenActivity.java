@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.reflect.TypeToken;
+import com.paynetone.counter.BuildConfig;
 import com.paynetone.counter.login.LoginActivity;
 import com.paynetone.counter.model.EmployeeModel;
 import com.paynetone.counter.model.ParamModel;
@@ -29,6 +30,15 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestParams();
+        try {
+            startService(new Intent(getBaseContext(), MyService.class));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void requestParams(){
         NetWorkController.getParams(new CommonCallback<SimpleResult>(this) {
             @Override
             protected void onSuccess(Call<SimpleResult> call, Response<SimpleResult> response) {
@@ -66,11 +76,5 @@ public class SplashScreenActivity extends AppCompatActivity {
                 super.onError(call, message);
             }
         });
-
-        try {
-            startService(new Intent(getBaseContext(), MyService.class));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }

@@ -87,7 +87,7 @@ fun AppCompatTextView.handlerCopyText(text :String,context: Context){
     val myClipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     val myClip: ClipData = ClipData.newPlainText("note_copy", text)
     myClipboard.setPrimaryClip(myClip)
-    Toast.showToast(context,"Sao chép thành công!")
+    Toast.showToast(context,"Sao chép $text thành công!")
 }
 
 fun ImageView.loadImageWithGlide(url:String){

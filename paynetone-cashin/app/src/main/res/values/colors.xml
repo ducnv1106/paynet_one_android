@@ -13,7 +13,7 @@
     <color name="black">#2D2D2D</color>
     <color name="white">#FFFFFFFF</color>
     <color name="opacity">#666666</color>
-    <color name="backgroundHome">#F5F5F5</color>
+    <color name="backgroundHome">#FFFFFF</color>
     <color name="close">#F44336</color>
     <color name="order_status_cancel">#ff4747</color>
     <color name="order_status_success">#71c016</color>

@@ -64,6 +64,22 @@ public class WithdrawSearchResponse {
     @Expose
     private String shopCode;
 
+    @SerializedName("TransCategory")
+    @Expose
+    private int transCategory;
+
+    public void setReturnCode(int returnCode) {
+        this.returnCode = returnCode;
+    }
+
+    public int getTransCategory() {
+        return transCategory;
+    }
+
+    public void setTransCategory(int transCategory) {
+        this.transCategory = transCategory;
+    }
+
     public String getShopCode() {
         return shopCode;
     }

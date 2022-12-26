@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.paynetone.counter.R
 import com.paynetone.counter.databinding.DevelopDialogBinding
 import com.paynetone.counter.databinding.ErrorDialogBinding
@@ -22,6 +24,14 @@ class ErrorDialog : BaseDialogFragment<ErrorDialogBinding>() {
             message = getString(ExtraConst.EXTRA_MESSAGE,"")
         }
     }
+//    fun show(message: String?,  manager: FragmentManager) {
+//        try {
+//            binding.tvMessage.text = message
+//            this.show(manager,"ErrorDialog")
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//    }
 
     override fun initView(){
         binding.apply {

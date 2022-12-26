@@ -313,14 +313,15 @@ public class MerchantPresenter extends Presenter<MerchantContract.View, Merchant
                             mView.goToNextStep();
 
                     } else {
-                        mView.showError(response.body().getMessage());
+//                        mView.showError(response.body().getMessage());
+                        Toast.showToast(activity,response.body().getMessage());
                     }
                 }
 
                 @Override
                 protected void onError(Call<SimpleResult> call, String message) {
                     super.onError(call, message);
-                    mView.showError(message);
+//                    mView.showError(message);
                 }
             });
         }catch (Exception e){
@@ -346,14 +347,15 @@ public class MerchantPresenter extends Presenter<MerchantContract.View, Merchant
                             mView.goToNextStep();
 
                     } else {
-                        mView.showError(response.body().getMessage());
+                        Toast.showToast(activity,response.body().getMessage());
+//                        mView.showError(response.body().getMessage());
                     }
                 }
 
                 @Override
                 protected void onError(Call<SimpleResult> call, String message) {
                     super.onError(call, message);
-                    mView.showError(message);
+//                    mView.showError(message);
                 }
             });
         }catch (Exception e){

@@ -12,10 +12,13 @@ import com.paynetone.counter.databinding.SuccessPaymentDialogBinding
 import com.paynetone.counter.utils.autoCleared
 import com.paynetone.counter.utils.setSingleClick
 
-class DevelopDialog : BaseDialogFragment<DevelopDialogBinding>() {
+class DevelopDialog(val message:String = "") : BaseDialogFragment<DevelopDialogBinding>() {
 
     override fun initView(){
         binding.apply {
+            if (message.isNotEmpty()){
+                tvMessage.text = message
+            }
             animationView.setPadding(-60,-60,-60,-60)
             btnClose.setSingleClick {
                 dismiss()

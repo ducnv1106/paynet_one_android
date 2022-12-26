@@ -200,6 +200,17 @@
                 android:padding="@dimen/_10sdp"
                 android:textSize="@dimen/_10sdp" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_note"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textStyle="italic"
+                android:textColor="#EC3939"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/str_not_qr_fragment"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_10sdp"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

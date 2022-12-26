@@ -66,19 +66,30 @@ class SelectAccountWithDrawBottom : BottomSheetDialogFragment() {
                 layoutWithDrawQr.setSingleClick {
                     icTickQr.setShowOrHideDrawable(true)
                     icTickGtgt.setShowOrHideDrawable(false)
+                    icTickBonus.setShowOrHideDrawable(false)
                     selectAccountWithDraw = SelectAccountWithDraw.ACCOUNT_QR
                     callBackListener?.onSelectAccountWithDrawBank(selectAccountWithDraw)
                 }
                 layoutWithDrawGtgt.setSingleClick {
                     icTickQr.setShowOrHideDrawable(false)
                     icTickGtgt.setShowOrHideDrawable(true)
+                    icTickBonus.setShowOrHideDrawable(false)
                     selectAccountWithDraw = SelectAccountWithDraw.ACCOUNT_GTGT
+                    callBackListener?.onSelectAccountWithDrawBank(selectAccountWithDraw)
+                }
+
+                layoutWithDrawBonus.setSingleClick {
+                    icTickQr.setShowOrHideDrawable(false)
+                    icTickGtgt.setShowOrHideDrawable(false)
+                    icTickBonus.setShowOrHideDrawable(true)
+                    selectAccountWithDraw = SelectAccountWithDraw.ACCOUNT_BONUS
                     callBackListener?.onSelectAccountWithDrawBank(selectAccountWithDraw)
                 }
 
                 when(selectAccountWithDraw){
                     SelectAccountWithDraw.ACCOUNT_QR -> icTickQr.setShowOrHideDrawable(true)
                     SelectAccountWithDraw.ACCOUNT_GTGT -> icTickGtgt.setShowOrHideDrawable(true)
+                    SelectAccountWithDraw.ACCOUNT_BONUS -> icTickBonus.setShowOrHideDrawable(true)
                 }
             }
         }catch (e:Exception){

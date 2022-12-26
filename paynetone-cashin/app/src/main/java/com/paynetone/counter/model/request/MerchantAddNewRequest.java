@@ -106,6 +106,17 @@ public class MerchantAddNewRequest {
     @SerializedName("PosID")
     @Expose
     private String posID;
+    @Expose
+    @SerializedName("ReferralCode")
+    private String referralCode;
+
+    public String getReferralCode() {
+        return referralCode;
+    }
+
+    public void setReferralCode(String referralCode) {
+        this.referralCode = referralCode;
+    }
 
     public String getPosID() {
         return posID;

@@ -34,10 +34,14 @@ import com.paynetone.counter.dialog.ManagerHanMucDialog;
 import com.paynetone.counter.dialog.NapHanMucDialog;
 import com.paynetone.counter.dialog.NewHistoryDialog;
 import com.paynetone.counter.dialog.PinCodeDialog;
+import com.paynetone.counter.dialog.ReferralCodeDialog;
 import com.paynetone.counter.dialog.SettingTabMainDialog;
 import com.paynetone.counter.dialog.TermPoliciesDialog;
+import com.paynetone.counter.enumClass.SelectWithDraw;
 import com.paynetone.counter.enumClass.StateNotify;
 import com.paynetone.counter.functions.history.HistoryActivity;
+import com.paynetone.counter.functions.outward.OutwardActivity;
+import com.paynetone.counter.functions.withdraw.WithDrawActivity;
 import com.paynetone.counter.interfaces.RegisterPassData;
 import com.paynetone.counter.login.regiter.merchant.MerchantPresenter;
 import com.paynetone.counter.main.SplashScreenActivity;
@@ -54,6 +58,7 @@ import com.paynetone.counter.observer.Observer;
 import com.paynetone.counter.observer.StateNotifyData;
 import com.paynetone.counter.utils.Constants;
 import com.paynetone.counter.utils.DialogUtils;
+import com.paynetone.counter.utils.ExtraConst;
 import com.paynetone.counter.utils.NumberUtils;
 import com.paynetone.counter.utils.SharedPref;
 
@@ -91,12 +96,18 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
     RelativeLayout rlHanMucStore;
     @BindView(R.id.rl_pin_code)
     RelativeLayout rlPinCode;
-
+    @BindView(R.id.rl_referral)
+    RelativeLayout rlReferral;
+    @BindView(R.id.tv_amount_account_bonus)
+    TextView tv_amount_account_bonus;
+    @BindView(R.id.rl_account_bonus)
+    RelativeLayout rl_account_bonus;
     SharedPref sharedPref;
     PaynetModel paynetModel;
     EmployeeModel employeeModel;
     Long amountOutWard = 0L;
     Long amountOutWardGTGT = 0L;
+    Long amountBonus = 0L;
     String password = "";
     String mode = "";
 
@@ -115,8 +126,6 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
         super.initLayout();
 
         sharedPref = new SharedPref(requireActivity());
-
-
         employeeModel = sharedPref.getEmployeeModel();
         paynetModel = sharedPref.getPaynet();
         mode = sharedPref.getString(Constants.KEY_ANDROID_PAYMENT_MODE, "");
@@ -126,6 +135,10 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
                 btnNapHanMuc.setVisibility(View.VISIBLE);
                 rlHanMucStore.setVisibility(View.VISIBLE);
                 rlPinCode.setVisibility(View.VISIBLE);
+                rl_account_bonus.setVisibility(View.VISIBLE);
+            }
+            if (sharedPref.isPersonal() && sharedPref.isMerchantAdmin()){
+                rlReferral.setVisibility(View.VISIBLE);
             }
 
             if (sharedPref.isManagerStore()) btnNapHanMuc.setVisibility(View.VISIBLE); // quản lý của hàng
@@ -143,7 +156,7 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
             e.printStackTrace();
         }
 
-        if (employeeModel !=null && mPresenter !=null ) mPresenter.getBalance(employeeModel.getPaynetID());
+//        if (employeeModel !=null && mPresenter !=null ) mPresenter.getBalance(employeeModel.getPaynetID());
         tv_email.setText(employeeModel.getEmail());
         if (employeeModel.getEmail().isEmpty()) tv_email.setVisibility(View.GONE);
         tv_mobile.setText(employeeModel.getMobileNumber());
@@ -163,7 +176,7 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
 
     @OnClick({R.id.rl_logout, R.id.rl_merchant_info, R.id.iv_back, R.id.layout_transaction_history, R.id.layout_notify,
             R.id.rl_change_password, R.id.rl_han_muc_store, R.id.rl_terms_policies, R.id.rl_news, R.id.rl_contact,R.id.btn_nap,
-            R.id.rl_order,R.id.rl_option_tab_main,R.id.rl_pin_code})
+            R.id.rl_order,R.id.rl_option_tab_main,R.id.rl_pin_code,R.id.rl_referral,R.id.rl_account_bonus})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.rl_logout:
@@ -193,6 +206,14 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
                     }
                 }).pushView();
                 break;
+            case R.id.rl_account_bonus:{
+                Intent intent = new Intent(requireActivity(), WithDrawActivity.class);
+                intent.putExtra(Constants.AMOUNT_OUTWARD, amountBonus);
+                intent.putExtra(ExtraConst.EXTRA_WITH_DRAW, SelectWithDraw.HAN_MUC);
+                intent.putExtra(Constants.AMOUNT_TYPE_BALANCE,"T");
+                startActivity(intent);
+                break;
+            }
             case R.id.iv_back:
                 getActivity().finish();
                 break;
@@ -231,13 +252,17 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
                         code = paynetModel.getCode();
                         codeMerchant =  paynetModel.getMerchantCode();
                     }
-                    NapHanMucDialog.getInstance(tvHanMuc.getText().toString(),code,codeMerchant,amountOutWard,amountOutWardGTGT,null,null).show(getChildFragmentManager(),"PersonalFragment");
+                    NapHanMucDialog.getInstance(tvHanMuc.getText().toString(),code,codeMerchant,amountOutWard,amountOutWardGTGT,amountBonus,null,null).show(getChildFragmentManager(),"PersonalFragment");
 
                 }
                 break;
             case R.id.rl_order:{
                 Intent intent = new Intent(requireActivity(), HistoryActivity.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.rl_referral:{
+                new ReferralCodeDialog().show(getChildFragmentManager(),"PersonalFragment");
                 break;
             }
             case R.id.rl_option_tab_main:{
@@ -348,13 +373,16 @@ public class PersonalFragment extends ViewFragment<PersonalContract.Presenter> i
                 amountOutWard = merchantBalance.getBalance();
             } else if (merchantBalance.getAccountType().equals("C")){
                 amountOutWardGTGT = merchantBalance.getBalance();
+            }else if (merchantBalance.getAccountType().equals("T")) {
+                amountBonus = merchantBalance.getBalance();
+                tv_amount_account_bonus.setText(NumberUtils.formatPriceNumber(merchantBalance.getBalance()) + " VNĐ");
             }
         }
     }
 
     @Override
     public void showManagerHanMuc(ArrayList<PaynetGetBalanceByIdResponse> responses) {
-        ManagerHanMucDialog.getInstance(responses,amountOutWard,amountOutWardGTGT).show(getChildFragmentManager(),"PersonalFragment");
+        ManagerHanMucDialog.getInstance(responses,amountOutWard,amountOutWardGTGT,amountBonus).show(getChildFragmentManager(),"PersonalFragment");
     }
 
     @Override

@@ -9,4 +9,5 @@
         android:angle="45"
         android:startColor="@color/colorPrimary"
         android:endColor="@color/colorPrimary"/>
+    <stroke android:width="0.6dp" android:color="@color/colorPrimary"/>
 </shape>

@@ -28,6 +28,7 @@ class ManagerHanMucDialog : BaseDialogFragment<ManagerHanMucDialogBinding>(), Di
     private lateinit var listContent:ArrayList<PaynetGetBalanceByIdResponse>
     private var amountOutWard:Long = 0L
     private var amountOutWardGTGT:Long = 0L
+    private var amountBonus:Long = 0L
 
     private lateinit var codeMerchant : String
     private lateinit var adapter : ManagerHanMucAdapter
@@ -39,6 +40,7 @@ class ManagerHanMucDialog : BaseDialogFragment<ManagerHanMucDialogBinding>(), Di
             listContent = getParcelableArrayList<PaynetGetBalanceByIdResponse>(ExtraConst.EXTRA_LIST_MANAGER_HAN_MUC) as ArrayList<PaynetGetBalanceByIdResponse>
             amountOutWard = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD,0L)
             amountOutWardGTGT = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_GTGT,0L)
+            amountBonus = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_BONUS,0L)
         }
     }
 
@@ -79,9 +81,9 @@ class ManagerHanMucDialog : BaseDialogFragment<ManagerHanMucDialogBinding>(), Di
                 hideProgressDialog()
                 if (result.errorCode == "00"){
                     val response = NetWorkController.getGson().fromJson<AddressPayNetIDResponse>(result.data,object : TypeToken<AddressPayNetIDResponse>(){}.type)
-                    NapHanMucDialog.getInstance(amount, item.code,codeMerchant,amountOutWard,amountOutWardGTGT,item,response.provinceCode).show(childFragmentManager, "ManagerHanMucDialog")
+                    NapHanMucDialog.getInstance(amount, item.code,codeMerchant,amountOutWard,amountOutWardGTGT,amountBonus,item,response.provinceCode).show(childFragmentManager, "ManagerHanMucDialog")
                 }else if (result.errorCode =="01"){
-                    NapHanMucDialog.getInstance(amount, item.code,codeMerchant,amountOutWard,amountOutWardGTGT,item,null).show(childFragmentManager, "ManagerHanMucDialog")
+                    NapHanMucDialog.getInstance(amount, item.code,codeMerchant,amountOutWard,amountOutWardGTGT,amountBonus,item,null).show(childFragmentManager, "ManagerHanMucDialog")
                 }else{
                     toast(result.message,requireContext())
                 }
@@ -143,11 +145,12 @@ class ManagerHanMucDialog : BaseDialogFragment<ManagerHanMucDialogBinding>(), Di
     companion object {
         @JvmStatic
         fun getInstance(listContent:ArrayList<PaynetGetBalanceByIdResponse>,
-                       amountOutWard:Long, amountOutWardGTGT:Long) = ManagerHanMucDialog().apply {
+                       amountOutWard:Long, amountOutWardGTGT:Long,amountBonus:Long) = ManagerHanMucDialog().apply {
             arguments = Bundle().apply {
                 putParcelableArrayList(ExtraConst.EXTRA_LIST_MANAGER_HAN_MUC,listContent)
                 putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD,amountOutWard)
                 putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_GTGT,amountOutWardGTGT)
+                putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_BONUS,amountBonus)
 
             }
         }

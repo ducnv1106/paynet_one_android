@@ -27,6 +27,7 @@
         tools:targetApi="r">
         <activity
             android:name=".main.SplashScreenActivity"
+            android:exported="true"
             android:theme="@style/SplashscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,71 +41,88 @@
             android:theme="@style/MainActivityTheme"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
+            android:exported="false"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation" />
         <activity
             android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".functions.qr.QRDynamicActivity"
             android:windowSoftInputMode="adjustPan"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity android:name=".functions.WebViewActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity android:name=".functions.payment.qr.QRActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity android:name=".functions.history.HistoryActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity android:name=".functions.withdraw.WithDrawActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
         <activity android:name=".functions.outward.OutwardActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity android:name=".login.regiter.RegisterActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
             android:name="com.afollestad.materialcamera.CaptureActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:theme="@style/MaterialCamera.CaptureActivity" />
         <activity
             android:name="com.afollestad.materialcamera.CaptureActivity2"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:theme="@style/MaterialCamera.CaptureActivity" />
         <activity
             android:name=".forgotpassword.requestotp.RequestOTPActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".forgotpassword.requestpassword.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity android:name=".personal.PersonalActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
+            android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
             android:name="com.paynetone.counter.functions.service.topup.TopUpActivity"
             android:windowSoftInputMode="adjustPan"
+            android:exported="false"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
             android:screenOrientation="portrait" />
         <activity
             android:name=".functions.han_muc.ListBankActivity"
             android:windowSoftInputMode="adjustPan"
+            android:exported="false"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
             android:screenOrientation="portrait" />
         <activity
             android:name=".functions.media.CameraActivity"
             android:theme="@style/CameraTheme"
+            android:exported="false"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|fontScale"
             android:screenOrientation="portrait" />
 
@@ -140,7 +158,9 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <service android:name=".service.MyService" android:stopWithTask="false" />
+        <service android:name=".service.MyService"
+            android:exported="false"
+            android:stopWithTask="false" />
     </application>
 
 </manifest>

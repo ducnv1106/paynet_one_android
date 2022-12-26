@@ -1,10 +1,12 @@
 package com.paynetone.counter.functions.qr;
 
+import android.content.Context;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.appcompat.widget.AppCompatImageView;
@@ -25,6 +27,7 @@ import com.paynetone.counter.utils.Constants;
 import com.paynetone.counter.utils.CurrencyTextWatcher;
 import com.paynetone.counter.utils.InputFilterCharacter;
 import com.paynetone.counter.utils.InputFilterCharacterNumber;
+import com.paynetone.counter.utils.MyWatcher;
 import com.paynetone.counter.utils.NumberUtils;
 import com.paynetone.counter.utils.SharedPref;
 import com.paynetone.counter.utils.Toast;
@@ -66,6 +69,8 @@ public class QRDynamicFragment extends ViewFragment<QRDynamicContract.Presenter>
     AppCompatImageView imgLogo;
     @BindView(R.id.tv_title)
     AppCompatTextView tvTitle;
+    @BindView(R.id.tv_note)
+    AppCompatTextView tv_note;
 
 
     public static QRDynamicFragment getInstance() {
@@ -91,11 +96,18 @@ public class QRDynamicFragment extends ViewFragment<QRDynamicContract.Presenter>
                 filters[1] = new InputFilterCharacter();
                 edt_note.setFilters(filters);
 
+                edt_note.addTextChangedListener(new MyWatcher(edt_note));
+                tv_note.setVisibility(View.VISIBLE);
+
             }
             InputFilter[] filters = new InputFilter[2];
             filters[0] = new InputFilterCharacterNumber.LengthFilter(11);
             filters[1] = new InputFilterCharacterNumber();
             edt_amount.setFilters(filters);
+
+            edt_amount.requestFocus();
+            InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(edt_amount, InputMethodManager.SHOW_IMPLICIT);
 
             tvTitle.setText(mPresenter.getProviderResponse().getName());
             Glide.with(imgLogo)
@@ -108,9 +120,7 @@ public class QRDynamicFragment extends ViewFragment<QRDynamicContract.Presenter>
             edt_amount.addTextChangedListener(new CurrencyTextWatcher(edt_amount));
             edt_amount.addTextChangedListener(new TextWatcher() {
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                }
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -131,6 +141,8 @@ public class QRDynamicFragment extends ViewFragment<QRDynamicContract.Presenter>
 
                 }
             });
+
+
 
             initAdapter();
         }catch (Exception e){
@@ -156,6 +168,7 @@ public class QRDynamicFragment extends ViewFragment<QRDynamicContract.Presenter>
                 break;
             case R.id.rootView:
                 AppUtils.hideKeyboard(v);
+                edt_amount.clearFocus();
                 break;
         }
     }

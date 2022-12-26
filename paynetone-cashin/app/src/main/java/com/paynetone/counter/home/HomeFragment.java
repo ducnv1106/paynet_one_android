@@ -3,6 +3,7 @@ package com.paynetone.counter.home;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -52,6 +53,7 @@ public class HomeFragment extends ViewFragment<HomeContract.Presenter> implement
     OptionPaymentAdapter bankAdapter;
     OptionPaymentAdapter eWalletAdapter;
     OptionPaymentAdapter paymentQrAdapter;
+    PaynetModel paynetModel;
 
     public static HomeFragment getInstance() {
         return new HomeFragment();
@@ -65,10 +67,16 @@ public class HomeFragment extends ViewFragment<HomeContract.Presenter> implement
     @Override
     public void initLayout() {
         super.initLayout();
+        paynetModel = new SharedPref(requireActivity()).getPaynet();
     }
 
     public void initAdapter(ArrayList<GetProviderResponse> providers){
         if (bankAdapter==null) bankAdapter = new OptionPaymentAdapter(getContext(), item -> {
+            String merchantStatus = paynetModel.getMerchantStatus();
+            if (merchantStatus!=null && merchantStatus.equals(Constants.WAITING_APPROVAL)){
+                new DevelopDialog(getResources().getString(R.string.str_message_waiting_approval)).show(getChildFragmentManager(),"HomeFragment");
+                return;
+            }
             if (item.isActive().equals(Constants.PROVIDER_ACTIVE)){
                 if (item.getItemGroup()){
                     ListBankQRDialog.getInstance(providers).show(getChildFragmentManager(),"HomeFragment");
@@ -85,6 +93,15 @@ public class HomeFragment extends ViewFragment<HomeContract.Presenter> implement
         recyclerViewBank.addItemDecoration(new MarginDecoration(20,4));
 
         if (paymentQrAdapter ==null)  paymentQrAdapter = new OptionPaymentAdapter(getContext(), item -> {
+            String merchantStatus = paynetModel.getMerchantStatus();
+            if (merchantStatus!=null && merchantStatus.equals(Constants.WAITING_APPROVAL)){
+                new DevelopDialog(getResources().getString(R.string.str_message_waiting_approval)).show(getChildFragmentManager(),"HomeFragment");
+                return;
+            }
+            if (item.getId() == Constants.ID_VNPAY && SharedPref.getInstance(getContext()).isPersonal()){
+                new DevelopDialog(getResources().getString(R.string.str_message_unsupport)).show(getChildFragmentManager(),"HomeFragment");
+                return;
+            }
             if (item.isActive().equals(Constants.PROVIDER_ACTIVE)){
                 Intent intent = new Intent(requireActivity(), QRDynamicActivity.class);
                 intent.putExtra(ExtraConst.EXTRA_PROVIDER_RESPONSE,item);
@@ -97,6 +114,11 @@ public class HomeFragment extends ViewFragment<HomeContract.Presenter> implement
         recyclePayment.addItemDecoration(new MarginDecoration(20,4));
 
         if (eWalletAdapter==null) eWalletAdapter = new OptionPaymentAdapter(getContext(), item -> {
+            String merchantStatus = paynetModel.getMerchantStatus();
+            if (merchantStatus!=null && merchantStatus.equals(Constants.WAITING_APPROVAL)){
+                new DevelopDialog(getResources().getString(R.string.str_message_waiting_approval)).show(getChildFragmentManager(),"HomeFragment");
+                return;
+            }
             if (item.isActive().equals(Constants.PROVIDER_ACTIVE)){
                 Intent intent = new Intent(requireActivity(), QRDynamicActivity.class);
                 intent.putExtra(ExtraConst.EXTRA_PROVIDER_RESPONSE,item);

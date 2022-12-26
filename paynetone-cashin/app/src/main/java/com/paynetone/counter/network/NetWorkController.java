@@ -22,6 +22,7 @@ import com.paynetone.counter.model.request.OutwardRequest;
 import com.paynetone.counter.model.request.PINAddRequest;
 import com.paynetone.counter.model.request.PartNerAddressRequest;
 import com.paynetone.counter.model.request.PaynetGetByParentRequest;
+import com.paynetone.counter.model.request.ReferralCodeRequest;
 import com.paynetone.counter.model.request.RequestGetOtp;
 import com.paynetone.counter.model.request.RequestOtp;
 import com.paynetone.counter.model.request.RequestPayNetHasChildren;
@@ -184,6 +185,13 @@ public class NetWorkController {
         return getApiBuilderRx().commonServiceRx(requestObject);
     }
 
+    public static Single<SimpleResult> referralCodes(ReferralCodeRequest request){
+        String data = getGson().toJson(request);
+        String signature = RSAUtil.signature(data);
+        RequestObject requestObject = new RequestObject("ANDROID", "", Constants.REFERRAL_MERCHANT_SEARCH, data, "", signature);
+        return getApiBuilderRx().commonServiceRx(requestObject);
+    }
+
     public static void getPaynet(BaseRequest request, CommonCallback<SimpleResult> callback) {
         try {
             String data = getGson().toJson(request);
@@ -333,6 +341,13 @@ public class NetWorkController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Single<SimpleResult> requestReferralTransSearch(WithdrawSearchRequest request) {
+        String data = getGson().toJson(request);
+        String signature = RSAUtil.signature(data);
+        RequestObject requestObject = new RequestObject("ANDROID", "", Constants.REFERRAL_TRANS_SEARCH, data, "", signature);
+        return getApiBuilderRx().commonServiceRx(requestObject);
     }
 
     public static void employeeAdd(EmployeeAddNewRequest request, CommonCallback<SimpleResult> callback) {

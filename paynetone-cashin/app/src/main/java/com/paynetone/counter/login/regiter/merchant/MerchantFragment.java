@@ -223,6 +223,11 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
     @BindView(R.id.edt_link)
     AppCompatEditText edtLink;
 
+    @BindView(R.id.layout_referral_code)
+    LinearLayout layout_referral_code;
+    @BindView(R.id.edt_referral_code)
+    AppCompatEditText edt_referral_code;
+
 
 
     StepperLayout.OnNextClickedCallback mCallback;
@@ -712,6 +717,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
         req.setQROption(qrOption);
         req.setLinkWebsite(edtLink.getText().toString());
         req.setImagesApp(fileImgFormalityOnline);
+        req.setReferralCode(edt_referral_code.getText().toString());
         if (mode.equals(Constants.MERCHANT_MODE_VIEW)) {
             req.setiD(mMerchantModel.getId());
             mPresenter.editMerchant(req);
@@ -1010,6 +1016,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
                 layout_radio.setVisibility(View.GONE);
                 tv_name_img_business_registration.setText(R.string.str_business_registration);
                 tv_name_img_address_sale.setText(R.string.str_address_sale);
+                layout_referral_code.setVisibility(View.VISIBLE);
                 break;
             case Constants.BUSINESS_TYPE_VIETLOTT:
                 tv_business.setText(getResources().getString(R.string.str_business_vietlott));
@@ -1075,6 +1082,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             auto_province.setText(model.getProvinceName());
             auto_district.setText(model.getDistrictName());
             auto_ward.setText(model.getWardName());
+            edt_referral_code.setText(model.getReferralCode());
             provinceModel = new BaseDialogModel(model.getProvinceID().toString(),model.getProvinceName());
             districtModel = new BaseDialogModel(model.getDistrictID().toString(),model.getDistrictName());
             wardModel = new BaseDialogModel(model.getWardID().toString(),model.getWardName());
@@ -1327,6 +1335,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             layout_radio.setVisibility(View.VISIBLE);
             tv_name_img_business_registration.setText(R.string.str_business_registration_required);
             tv_name_img_address_sale.setText(R.string.str_address_sale_required);
+            layout_referral_code.setVisibility(View.GONE);
             popupWindow.dismiss();
         });
         popup.findViewById(R.id.tv_business_type_household).setOnClickListener(view1 ->{
@@ -1351,6 +1360,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             layout_radio.setVisibility(View.VISIBLE);
             tv_name_img_business_registration.setText(R.string.str_business_registration_required);
             tv_name_img_address_sale.setText(R.string.str_address_sale_required);
+            layout_referral_code.setVisibility(View.GONE);
             popupWindow.dismiss();
         });
         popup.findViewById(R.id.tv_business_personal).setOnClickListener(view1 -> {
@@ -1380,6 +1390,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             layout_radio.setVisibility(View.GONE);
             tv_name_img_business_registration.setText(getResources().getString(R.string.str_business_registration));
             tv_name_img_address_sale.setText(getResources().getString(R.string.str_address_sale));
+            layout_referral_code.setVisibility(View.VISIBLE);
             popupWindow.dismiss();
         });
         popup.findViewById(R.id.tv_business_vietlott).setOnClickListener(view1 -> {
@@ -1409,6 +1420,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             layout_radio.setVisibility(View.GONE);
             tv_name_img_business_registration.setText(getResources().getString(R.string.str_business_registration));
             tv_name_img_address_sale.setText(getResources().getString(R.string.str_address_sale));
+            layout_referral_code.setVisibility(View.GONE);
             popupWindow.dismiss();
 
         });
@@ -1439,6 +1451,7 @@ public class MerchantFragment extends ViewFragment<MerchantContract.Presenter> i
             layout_business_online.setVisibility(View.GONE);
             tv_name_img_business_registration.setText(getResources().getString(R.string.str_business_registration));
             tv_name_img_address_sale.setText(getResources().getString(R.string.str_address_sale));
+            layout_referral_code.setVisibility(View.GONE);
             popupWindow.dismiss();
         });
 

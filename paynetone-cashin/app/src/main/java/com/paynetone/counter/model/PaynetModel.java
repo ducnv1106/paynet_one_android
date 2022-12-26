@@ -31,6 +31,19 @@ public class PaynetModel {
     @SerializedName("MerchantCode")
     private String merchantCode;
 
+    @SerializedName("MerchantStatus")
+    @Expose
+    private String merchantStatus;
+
+
+    public String getMerchantStatus() {
+        return merchantStatus;
+    }
+
+    public void setMerchantStatus(String merchantStatus) {
+        this.merchantStatus = merchantStatus;
+    }
+
     public String getMerchantCode() {
         return merchantCode;
     }

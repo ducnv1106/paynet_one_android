@@ -562,6 +562,36 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/layout_referral_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:text="@string/str_referral_code" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_referral_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:hint="@string/str_hint_referral_code"
+                        android:background="@drawable/bg_edt_forgot_password"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:textSize="@dimen/_11sdp" />
+
+                </LinearLayout>
+
 
                 <TextView
                     android:layout_width="match_parent"

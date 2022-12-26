@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import com.paynetone.counter.R
 
 import com.paynetone.counter.databinding.NotifyDialogBinding
@@ -13,6 +14,7 @@ import com.paynetone.counter.utils.setSingleClick
 class NotifyDialog : BaseDialogFragment<NotifyDialogBinding>() {
 
     private lateinit var message: String
+    private var callBack: NotifyCallBack?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +25,10 @@ class NotifyDialog : BaseDialogFragment<NotifyDialogBinding>() {
 
     override fun initView() {
         binding.apply {
-            tvMessage.text = message
+            tvMessage.text = HtmlCompat.fromHtml(message, HtmlCompat.FROM_HTML_MODE_LEGACY)
             btnClose.setSingleClick {
                 dismiss()
+                callBack?.onListenerClose()
             }
         }
     }
@@ -35,6 +38,10 @@ class NotifyDialog : BaseDialogFragment<NotifyDialogBinding>() {
     override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
         NotifyDialogBinding.inflate(inflater, container, false)
 
+    fun setCallback(callBack: NotifyCallBack){
+        this.callBack = callBack
+    }
+
     companion object {
         @JvmStatic
         fun getInstance(message:String) = NotifyDialog().apply {
@@ -43,5 +50,9 @@ class NotifyDialog : BaseDialogFragment<NotifyDialogBinding>() {
 
             }
         }
+    }
+
+    interface NotifyCallBack{
+        fun onListenerClose()
     }
 }

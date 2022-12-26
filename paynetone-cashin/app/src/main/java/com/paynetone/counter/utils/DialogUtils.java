@@ -312,9 +312,10 @@ public class DialogUtils {
         }
     }
     public static void showErrorDialog(String message, FragmentManager manager){
-        if (errorDialog == null) {
-            errorDialog =  ErrorDialog.getInstance(message);
-        }
+//        if (errorDialog == null) {
+//            errorDialog =  ErrorDialog.getInstance(message);
+//        }
+        errorDialog =  ErrorDialog.getInstance(message);
 
         try{
             if (!errorDialog.isAdded() && !errorDialog.isVisible()){

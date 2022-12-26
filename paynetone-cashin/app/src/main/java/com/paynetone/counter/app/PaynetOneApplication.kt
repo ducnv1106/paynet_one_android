@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.*
 import androidx.multidex.MultiDexApplication
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.paynetone.counter.login.LoginActivity
 import com.paynetone.counter.main.SplashScreenActivity
 import com.paynetone.counter.utils.Constants
 import com.paynetone.counter.utils.PrefConst

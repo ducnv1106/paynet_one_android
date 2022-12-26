@@ -51,7 +51,7 @@ class NewHistoryDialog : BaseDialogFragment<DialogNewHistoryBinding>() {
                             ) {
                                 when(viewPager.currentItem){
                                     0->{
-                                        fragmentHistoryQr.requestTransSearch(branchID ?: 0 , storeID ?: 0, stallID ?: 0)
+                                        fragmentHistoryQr.requestTransSearch(branchID  , storeID , stallID)
                                     }
                                     1->{
                                         fragmentHistory.requestTransSearch(branchID, storeID, stallID)

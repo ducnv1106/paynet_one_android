@@ -19,6 +19,8 @@ import com.core.base.viper.interfaces.ContainerView;
 import com.paynetone.counter.R;
 import com.paynetone.counter.adapter.BranchAdapter;
 import com.paynetone.counter.dialog.ConfirmDialog;
+import com.paynetone.counter.dialog.HistoryAccountBonusDialog;
+import com.paynetone.counter.dialog.NotifyDialog;
 import com.paynetone.counter.dialog.SelectAccountWithDrawBottom;
 import com.paynetone.counter.dialog.SelectWithDrawBottom;
 import com.paynetone.counter.dialog.SelectWithDrawWalletBottom;
@@ -116,6 +118,7 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
 
     long amountOutward;
     long amountOutwardGTGT;
+    long amountBonus;
     String balanceType ="P";
     List<BankModel> mBankModels;
     BankModel mBankModel;
@@ -157,6 +160,7 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
 
             amountOutward = requireActivity().getIntent().getLongExtra(Constants.AMOUNT_OUTWARD, 0);
             amountOutwardGTGT = requireActivity().getIntent().getLongExtra(Constants.AMOUNT_OUTWARD_GTGT,0);
+            amountBonus = requireActivity().getIntent().getLongExtra(Constants.AMOUNT_OUT_WARD_BONUS,0);
 
 
             String balanceType = requireActivity().getIntent().getStringExtra(Constants.AMOUNT_TYPE_BALANCE);
@@ -169,7 +173,10 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
 
 
             if (this.balanceType.equals("P")) tvNameAmountWithDraw.setText(getResources().getText(R.string.str_amount_with_draw_qr));
-            else {
+            else if (this.balanceType.equals("T")){
+                tv_account.setText(getResources().getText(R.string.str_with_draw_account_bonus));
+                tvNameAmountWithDraw.setText("Số tiền tài khoản thưởng");
+            } else {
                 tv_account.setText(getResources().getText(R.string.str_with_draw_account_gtgt));
                 tvNameAmountWithDraw.setText(getResources().getText(R.string.str_amount_with_draw_gtgt));
             }
@@ -216,11 +223,16 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
                         tv_account.setText(getResources().getText(R.string.str_with_draw_account_qr));
                         this.balanceType = "P";
                         tv_amount_p.setText(NumberUtils.formatPriceNumber(amountOutward) + " VNĐ");
-                    }else{
+                    }else if (selectAccountWithDraw == SelectAccountWithDraw.ACCOUNT_GTGT){
                         tvNameAmountWithDraw.setText(getResources().getText(R.string.str_amount_with_draw_gtgt));
                         tv_account.setText(getResources().getText(R.string.str_with_draw_account_gtgt));
                         this.balanceType = "C";
                         tv_amount_p.setText(NumberUtils.formatPriceNumber(amountOutwardGTGT) + " VNĐ");
+                    }else {
+                        tvNameAmountWithDraw.setText(getResources().getText(R.string.str_amount_with_draw_bonus));
+                        tv_account.setText(getResources().getText(R.string.str_amount_with_draw_bonus));
+                        this.balanceType = "T";
+                        tv_amount_p.setText(NumberUtils.formatPriceNumber(amountBonus) + " VNĐ");
                     }
                 });
             });
@@ -268,7 +280,12 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
                 ok();
                 break;
             case R.id.iv_history:
-                new HistoryPresenter((ContainerView) requireActivity(),balanceType).pushView();
+                if (balanceType.equals("T")){
+                    new HistoryAccountBonusDialog().show(getChildFragmentManager(),"WithDrawFragment");
+                }else {
+                    new HistoryPresenter((ContainerView) requireActivity(),balanceType).pushView();
+                }
+
                 break;
             case R.id.tv_branch:
                 if (branchResponses.size()>0) showPopUpBranch(branchResponses);
@@ -286,6 +303,13 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
             if (confirmInput()){
                 String message = "";
                 String amount = edt_amount.getText().toString() + "VNĐ";
+                long amountLong = Long.parseLong(String.valueOf(edt_amount.getText()).replace(",", ""));
+                if (balanceType.equals("T") && (amountLong < 50000 || amountLong>5000000) ){
+                    String err =  "Số tiền tối thiểu chuyển là  <font color='#007fff'>50.000 VND</font>\n và tối đa <font color='#007fff'>5.000.000 VND";
+                   NotifyDialog.getInstance(err)
+                            .show(getChildFragmentManager(),"WithDrawFragment");
+                   return;
+                }
                 switch (selectWithDraw){
                     case BANK:{
                         message = "Bạn có chắc chắn muốn rút số tiền " + "<font color='#007FFF'>"+amount+"</font>" + " về tài khoản ngân hàng không?";
@@ -310,9 +334,8 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
+
 
     private void requestWithDraw(){
         try {
@@ -371,11 +394,16 @@ public class WithDrawFragment extends ViewFragment<WithDrawContract.Presenter> i
 
     @Override
     public void showSuccess(String retRefNumber) {
-        SuccessPaymentDialog successPaymentDialog =  SuccessPaymentDialog.getInstance(getString(R.string.str_message_payment_success));
+        String message = "";
+        if (selectWithDraw==SelectWithDraw.HAN_MUC){
+            message = "Yêu cầu rút tiền của quý khách đã được xử lý. Vui lòng kiểm tra tài khoản hạn mức";
+        }else {
+            message = getString(R.string.str_message_payment_success);
+        }
+        SuccessPaymentDialog successPaymentDialog =  SuccessPaymentDialog.getInstance(message);
         successPaymentDialog.setCallBackListener(new SuccessPaymentDialog.CallBackListener() {
             @Override
             public void onCloseClicked() {
-                Log.e("TAG", "onCloseClicked: 121" );
                 StateViewData.setMeasurements(StateView.GONE);
                 StateNotifyData.setMeasurements(StateNotify.I_NEED_UPDATE);
                 requireActivity().finish();

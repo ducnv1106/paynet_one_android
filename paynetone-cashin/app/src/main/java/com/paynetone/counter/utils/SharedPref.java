@@ -181,6 +181,16 @@ public class SharedPref {
         return null;
 
     }
+    public Boolean isPersonal(){
+        try {
+            if (getPaynet().getBusinessType()== Constants.BUSINESS_TYPE_PERSONAL){ //  cá nhân
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
     public Boolean isMerchantAdmin(){
         try {
             if (getEmployeeModel().getRoleID() == Constants.MERCHANT_ADMIN && Integer.parseInt(getPaynet().getPnoLevel())==Constants.PNOLEVEL_MERCHANT){ // merchant admin

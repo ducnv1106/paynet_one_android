@@ -87,7 +87,7 @@
     <style name="RelativeLayoutPersonal">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/_7sdp</item>
+<!--        <item name="android:padding">@dimen/_7sdp</item>-->
     </style>
 
     <style name="ImageViewPersonal">

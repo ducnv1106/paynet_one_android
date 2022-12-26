@@ -26,7 +26,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class HistoryAdapter  extends RecyclerBaseAdapter {
+public class HistoryAdapter extends RecyclerBaseAdapter {
 
     Activity activity;
     List<WithdrawSearchResponse> mItems;
@@ -72,7 +72,7 @@ public class HistoryAdapter  extends RecyclerBaseAdapter {
 
         @Override
         public void bindView(Object model, int position) {
-            WithdrawSearchResponse item = (WithdrawSearchResponse)model;
+            WithdrawSearchResponse item = (WithdrawSearchResponse) model;
 
             try {
                 tv_amount.setText(NumberUtils.formatPriceNumber(item.getAmount()) + "đ");
@@ -82,7 +82,7 @@ public class HistoryAdapter  extends RecyclerBaseAdapter {
                 tv_full_name.setText(item.getFullName());
                 tv_status.setText(Utils.getStatusWithdrawName(item.getReturnCode()));
 
-                switch (item.getWithDrawCatefory()){
+                switch (item.getWithDrawCatefory()) {
                     case Constants.WITHDRAW_CATEGORY_BANK:
                         tv_bank.setText(item.getBankShortName());
                         tv_account_number.setText(item.getAccountNumber());
@@ -97,8 +97,8 @@ public class HistoryAdapter  extends RecyclerBaseAdapter {
                         break;
                     case Constants.WITHDRAW_CATEGORY_HAN_MUC:
                         tv_bank.setText("Tài khoản hạn mức");
-                        if (item.getShopCode().isEmpty())  tv_account_number.setText("");
-                        else tv_account_number.setText("Mã cửa hàng: "+item.getShopCode());
+                        if (item.getShopCode().isEmpty()) tv_account_number.setText("");
+                        else tv_account_number.setText("Mã cửa hàng: " + item.getShopCode());
                         tv_full_name.setText(item.getShopName());
                         break;
                     default:
@@ -108,7 +108,7 @@ public class HistoryAdapter  extends RecyclerBaseAdapter {
 
                 }
 
-                switch (item.getReturnCode()){
+                switch (item.getReturnCode()) {
 
                     case 0:
                         tv_status.setBackground(ContextCompat.getDrawable(mContext, R.drawable.order_status_s));
@@ -123,10 +123,9 @@ public class HistoryAdapter  extends RecyclerBaseAdapter {
                         tv_status.setBackground(ContextCompat.getDrawable(mContext, R.drawable.order_status_c));
                         break;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
 
         }

@@ -15,22 +15,25 @@ import com.paynetone.counter.databinding.ItemServiceBinding
 import com.paynetone.counter.model.PaymentModel
 import com.paynetone.counter.model.ServiceModel
 import com.paynetone.counter.model.request.GetProviderResponse
-import com.paynetone.counter.utils.Constants
+import com.paynetone.counter.utils.*
 import com.paynetone.counter.utils.Constants.*
-import com.paynetone.counter.utils.loadImageWithGlide
-import com.paynetone.counter.utils.loadImageWithGlideResource
-import com.paynetone.counter.utils.setSingleClick
 
 class OptionPaymentAdapter(private val mContext:Context,
                            var listener: OnClickItemListener,
                            private var typeProvider:ProviderEnum,
                            private val listProvider : ArrayList<GetProviderResponse>
                            ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private var sharedPref : SharedPref?=null
 //
     companion object{
         const val TYPE_QR = 1
         const val TYPE_SERVICE = 2
         const val TYPE_GROUP_BANK = 3
+    }
+
+    init {
+        sharedPref = SharedPref.getInstance(mContext)
     }
 
 
@@ -106,11 +109,23 @@ class OptionPaymentAdapter(private val mContext:Context,
                 rootView.setSingleClick {
                     listener.onClickItem(item)
                 }
+                sharedPref?.paynet?.let {
+                    if (it.merchantStatus == Constants.WAITING_APPROVAL){
+                        viewDim.visibility = View.VISIBLE
+                        tvName.setTextColor(mContext.resources.getColor(R.color.grey,null))
+                    }
+                }
+                if (item.id == ID_VNPAY && sharedPref?.isPersonal == true){
+                    viewDim.visibility = View.VISIBLE
+                    tvName.setTextColor(mContext.resources.getColor(R.color.grey,null))
+                }
+
                 if (item.isActive == PROVIDER_NO_ACTIVE){
                     viewDim.visibility = View.VISIBLE
                     tvName.setTextColor(mContext.resources.getColor(R.color.grey,null))
 //                    tvName.alpha = 0.45F
                 }
+
             }
         }
     }
@@ -122,6 +137,12 @@ class OptionPaymentAdapter(private val mContext:Context,
                 tvName.text = item.name
                 imgLogo.loadImageWithGlide(item.icon ?: "")
 
+                sharedPref?.paynet?.let {
+                    if (it.merchantStatus == Constants.WAITING_APPROVAL){
+                        viewDim.visibility = View.VISIBLE
+                        tvName.setTextColor(mContext.resources.getColor(R.color.grey,null))
+                    }
+                }
                 if (item.isActive == PROVIDER_NO_ACTIVE){
                     viewDim.visibility = View.VISIBLE
                     tvName.setTextColor(mContext.resources.getColor(R.color.grey,null))

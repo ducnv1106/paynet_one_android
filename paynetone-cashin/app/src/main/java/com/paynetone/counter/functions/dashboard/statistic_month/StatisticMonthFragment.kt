@@ -56,10 +56,11 @@ class StatisticMonthFragment :  Fragment() {
                 }
             }
             binding.refreshLayout.setColorSchemeResources(R.color.colorPrimary)
-            Handler(Looper.getMainLooper()).postDelayed({
-                binding.refreshLayout.isRefreshing=false
-
-            }, 2000L)
+            binding.refreshLayout.isRefreshing=false
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                binding.refreshLayout.isRefreshing=false
+//
+//            }, 2000L)
 
         }
     }

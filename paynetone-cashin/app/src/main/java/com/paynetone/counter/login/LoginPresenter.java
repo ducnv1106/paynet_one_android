@@ -97,10 +97,12 @@ public class LoginPresenter extends Presenter<LoginContract.View, LoginContract.
         BaseRequest baseRequest = new BaseRequest();
         baseRequest.setID(employeeModel.getPaynetID());
         baseRequest.setMobileNumber(employeeModel.getMobileNumber());
+        mView.showProgress();
         mInteractor.getPaynet(baseRequest, new CommonCallback<SimpleResult>((Activity) mContainerView) {
             @Override
             protected void onSuccess(Call<SimpleResult> call, Response<SimpleResult> response) {
                 super.onSuccess(call, response);
+                mView.hideProgress();
 
                 if ("00".equals(response.body().getErrorCode())) {
                     SharedPref sharedPref = new SharedPref((Context) mContainerView);
@@ -116,6 +118,7 @@ public class LoginPresenter extends Presenter<LoginContract.View, LoginContract.
             @Override
             protected void onError(Call<SimpleResult> call, String message) {
                 super.onError(call, message);
+                mView.hideProgress();
             }
         });
     }

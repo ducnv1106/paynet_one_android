@@ -89,10 +89,11 @@ class HistoryPaymentQRDialog : BaseDialogFragment<HistoryDialogBinding>() {
     private fun onRefreshListener() {
         binding.refreshLayout.setOnRefreshListener {
             requestTransSearch()
-            Handler(Looper.getMainLooper()).postDelayed({
-                binding.refreshLayout.isRefreshing = false
-
-            }, 2000L)
+            binding.refreshLayout.isRefreshing = false
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                binding.refreshLayout.isRefreshing = false
+//
+//            }, 2000L)
 
         }
     }

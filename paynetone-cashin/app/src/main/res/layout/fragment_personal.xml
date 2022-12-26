@@ -238,6 +238,60 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_account_bonus"
+                style="@style/RelativeLayoutPersonal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@android:color/white"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/rl_content_account_bonus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_7sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/ic_account_bonus"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/str_with_draw_account_bonus"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_amount_account_bonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:gravity="end|center"
+                        android:text="0 VND"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/rl_merchant_info"
                 style="@style/RelativeLayoutPersonal"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -245,6 +299,7 @@
                 android:visibility="visible">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -265,7 +320,17 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
+
+
 
             <RelativeLayout
                 android:id="@+id/rl_order"
@@ -275,6 +340,7 @@
                 android:visibility="gone">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -295,6 +361,14 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -304,6 +378,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -324,18 +399,25 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
-            </RelativeLayout>
 
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_pin_code"
                 style="@style/RelativeLayoutPersonal"
                 android:visibility="gone"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:paddingStart="@dimen/_8sdp"
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -356,6 +438,14 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -366,6 +456,7 @@
                 android:visibility="gone">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -386,6 +477,13 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -395,6 +493,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -415,6 +514,13 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -424,6 +530,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -444,6 +551,14 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -453,6 +568,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -473,10 +589,56 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_referral"
+                android:visibility="gone"
+                style="@style/RelativeLayoutPersonal"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:padding="@dimen/_7sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/ic_referral_code" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="Danh sách giới thiệu"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <ImageView style="@style/ImageViewArrowRight" />
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_setting"
+                android:visibility="gone"
                 style="@style/RelativeLayoutPersonal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -486,6 +648,7 @@
 
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -516,6 +679,14 @@
                     android:thumb="@drawable/thumb_selector"
                     app:track="@drawable/track_selector" />
 
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
+
             </RelativeLayout>
 
 
@@ -526,6 +697,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -546,6 +718,14 @@
                 </LinearLayout>
 
                 <ImageView style="@style/ImageViewArrowRight" />
+
+                <View
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#EAE7E7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -555,6 +735,7 @@
                 android:background="@android:color/white">
 
                 <LinearLayout
+                    android:padding="@dimen/_7sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -586,9 +767,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:text="v.1.0"
-        android:textSize="@dimen/_11sdp"
         android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_11sdp"
         android:textStyle="bold" />
 </RelativeLayout>

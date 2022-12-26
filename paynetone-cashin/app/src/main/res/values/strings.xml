@@ -43,6 +43,7 @@
     <string name="str_amount_with_draw_qr">Số tiền đã đối soát</string>
     <string name="str_amount_out_ward_gtgt">Hoa hồng chờ đối soát</string>
     <string name="str_amount_with_draw_gtgt">Hoa hồng đã đối soát</string>
+    <string name="str_amount_with_draw_bonus">Tài khoản thưởng</string>
 
     //qr dynamic fragment
     <string name="str_title_qr_dynamic">Tạo mã QR Code thanh toán</string>
@@ -62,6 +63,7 @@
     <string name="str_qr_moca">Sử dụng ứng dụng Moca để quét mã</string>
     <string name="str_qr_viet_qr">Sử dụng ứng dụng VietQR để quét mã</string>
     <string name="str_code_order">Mã đơn hàng:  </string>
+    <string name="str_not_qr_fragment">Chú ý: Nội dung không bao gồm ký tự đặc biệt!</string>
 
     // merchant fragment
     <string name="str_title_fragment_merchant">Hồ sơ Merchant</string>
@@ -204,8 +206,12 @@
     <string name="str_with_draw_account">Tài khoản rút tiền <font fgcolor='#EA5151'>*</font></string>
     <string name="str_with_draw_account_qr">Tài khoản đã đối soát</string>
     <string name="str_with_draw_account_gtgt">Tài khoản hoa hồng đã đối soát</string>
+    <string name="str_with_draw_account_bonus">Tài khoản thưởng</string>
+    <string name="str_referral_code">Mã giới thiệu</string>
+    <string name="str_hint_referral_code">Nhập mã giới thiệu</string>
 
     <string name="str_allow_running_background">Không hạn chế hoạt động dưới nền cho ứng dụng.</string>
+    <string name="str_message_with_draw_error_account_bonus">Số tiền tối thiểu chuyển là  <font fgcolor='#EA5151'>50.000 VND</font> và tối đa <font fgcolor='#EA5151'>50.000.000 VND</font></string>
 
     
     //fragment_service
@@ -385,6 +391,10 @@ Chính sách quyền riêng tư này được giải thích và thi hành theo P
 <!--    <string name="str_change_password_success">Thay đổi mật khẩu thành công</string>-->
     <string name="str_old_equals_new_password">Mật khẩu mới không được trùng với mật khẩu cũ!</string>
     <string name="str_download_image_success">Tải hình ảnh thành công!</string>
+
+    <string name="str_message_develop">Chức năng đang trong quá trình phát triển.\n Vui lòng chọn chức năng khác!</string>
+    <string name="str_message_unsupport">Merchant cá nhân không hỗ trợ\n thanh toán bằng VNPay</string>
+    <string name="str_message_waiting_approval">Merchant chưa được phê duyệt.\nVui lòng chọn chức năng khác!</string>
 
 
 </resources>

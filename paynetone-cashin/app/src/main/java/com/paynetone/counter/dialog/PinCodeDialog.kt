@@ -34,7 +34,7 @@ class PinCodeDialog : BaseDialogFragment<DialogPinCodeBinding>(){
     private lateinit var title:String
     private lateinit var sharedPref :SharedPref
     var IsGetOTP = true
-    private lateinit var countDownTimer: CountDownTimer
+    private  var countDownTimer: CountDownTimer? = null
 
     override fun loadControlsAndResize(binding: DialogPinCodeBinding) {
         binding.apply {
@@ -239,7 +239,7 @@ class PinCodeDialog : BaseDialogFragment<DialogPinCodeBinding>(){
                         btnSendRequest.visibility = View.VISIBLE
                         layoutOtp.visibility = View.GONE
                         btnVerifyOtp.visibility = View.GONE
-                        countDownTimer.onFinish()
+                        countDownTimer?.onFinish()
                     }
                 }else{
                     Toast.showToast(requireContext(),result.message)
@@ -268,7 +268,7 @@ class PinCodeDialog : BaseDialogFragment<DialogPinCodeBinding>(){
                 IsGetOTP = true
             }
         }
-        countDownTimer.start()
+        countDownTimer?.start()
     }
 
 
@@ -290,7 +290,7 @@ class PinCodeDialog : BaseDialogFragment<DialogPinCodeBinding>(){
     override fun onDestroy() {
         super.onDestroy()
         try {
-            countDownTimer.onFinish()
+            countDownTimer?.onFinish()
         }catch (e:Exception){
             e.printStackTrace()
         }

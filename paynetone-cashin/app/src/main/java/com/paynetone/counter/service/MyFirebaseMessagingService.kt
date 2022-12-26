@@ -59,6 +59,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
             val title = data.getString("title") ?: ""
             val body = data.getString("body") ?: ""
+            val message = data.get("message") ?: ""
+            Log.e("TAG", "onMessageReceived: $message" )
 
             var currentId: Int =
                 SharedPref.getInstance(applicationContext).getInt(NOTIFICATION_COUNT, 0)
@@ -66,6 +68,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             SharedPref.getInstance(applicationContext).putInt(NOTIFICATION_COUNT, currentId);
             val context = applicationContext
             val defaultAction = Intent(context, MainActivity::class.java)
+
                 .setAction(Intent.ACTION_DEFAULT)
                 .putExtra(Constants.NOTIFICATION_DATA_TRANSFER, data)
             defaultAction.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

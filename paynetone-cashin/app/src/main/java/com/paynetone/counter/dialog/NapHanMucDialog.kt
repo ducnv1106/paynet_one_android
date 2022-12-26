@@ -39,6 +39,7 @@ class NapHanMucDialog : BaseDialogFragment<NapHanMucDialogBinding>(), DisplayEle
     private var codeMerchant:String? = null
     private var amountOutWard:Long = 0L
     private var amountOutWardGTGT:Long = 0L
+    private var amountBonus : Long = 0L
     private var payNetGetBalance : PaynetGetBalanceByIdResponse ?= null
     private var provinceCode:String? = null
 
@@ -54,6 +55,7 @@ class NapHanMucDialog : BaseDialogFragment<NapHanMucDialogBinding>(), DisplayEle
             }
             amountOutWard = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD,0L)
             amountOutWardGTGT = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_GTGT,0L)
+            amountBonus = getLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_BONUS,0L)
             getParcelable<PaynetGetBalanceByIdResponse>(ExtraConst.EXTRA_PAYNET)?.let {
                 payNetGetBalance = it
             }
@@ -90,6 +92,7 @@ class NapHanMucDialog : BaseDialogFragment<NapHanMucDialogBinding>(), DisplayEle
                 intent.apply {
                     putExtra(Constants.AMOUNT_OUTWARD, amountOutWard )
                     putExtra(Constants.AMOUNT_OUTWARD_GTGT,amountOutWardGTGT)
+                    putExtra(Constants.AMOUNT_OUT_WARD_BONUS,amountBonus)
                     putExtra(ExtraConst.EXTRA_WITH_DRAW, SelectWithDraw.HAN_MUC)
                     payNetGetBalance?.let {
                         putExtra(ExtraConst.EXTRA_PAYNET_GET_BALANCE_BY_ID,it)
@@ -164,6 +167,7 @@ class NapHanMucDialog : BaseDialogFragment<NapHanMucDialogBinding>(), DisplayEle
         fun getInstance( content:String, code:String?, codeMerchant:String?,
                          amountOutWard:Long,
                          amountOutWardGTGT:Long,
+                         amountBonus:Long,
                          payNetGetBalance:PaynetGetBalanceByIdResponse?=null,
                          provinceCode:String?= null) = NapHanMucDialog().apply {
             arguments = Bundle().apply {
@@ -179,6 +183,7 @@ class NapHanMucDialog : BaseDialogFragment<NapHanMucDialogBinding>(), DisplayEle
                 }
                 putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD,amountOutWard)
                 putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_GTGT,amountOutWardGTGT)
+                putLong(ExtraConst.EXTRA_AMOUNT_OUTWARD_BONUS,amountBonus)
                 putParcelable(ExtraConst.EXTRA_PAYNET,payNetGetBalance)
 
             }

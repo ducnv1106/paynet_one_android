@@ -38,8 +38,14 @@ public class PersonalPresenter extends Presenter<PersonalContract.View, Personal
         super(containerView);
     }
 
+    EmployeeModel employeeModel;
+
     @Override
     public void start() {
+        employeeModel = SharedPref.getInstance(getViewContext()).getEmployeeModel();
+        if (employeeModel !=null ){
+            getBalance(employeeModel.getPaynetID());
+        }
 
     }
 

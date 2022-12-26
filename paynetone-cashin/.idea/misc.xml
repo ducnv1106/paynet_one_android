@@ -175,6 +175,49 @@
         <entry key="..\:/Users/ADMIN/Desktop/paynet_one/anroid.vinatti.com.vn/paynetone-cashin/app/src/main/res/layout/term_policie_dialog.xml" value="0.12040923399790136" />
         <entry key="..\:/Users/ADMIN/Desktop/paynet_one/anroid.vinatti.com.vn/paynetone-cashin/app/src/main/res/layout/top_up_fragment.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/ADMIN/Desktop/paynet_one/anroid.vinatti.com.vn/paynetone-cashin/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_close_confirm_password.xml" value="0.24" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_edt_forgot_password.xml" value="0.231" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_item_provider_not_active.xml" value="0.231" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_personal_fragment.xml" value="0.1405" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_transaction_dashboard.xml" value="0.1405" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/bg_view_indicator_dashboard.xml" value="0.231" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/gradient_bg.xml" value="0.231" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/drawable/ic_referral_code.xml" value="0.2215" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/activity_main.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/bottom_account_with_draw.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/confirm_dialog.xml" value="0.23385416666666667" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/contact_dialog.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dashboard_fragment.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/develop_dialog.xml" value="0.240625" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_confirm_pin_code.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_history_account_bonus.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_history_payment_qr.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_list_bank.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_new_history.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_pin_code.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_progress.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/dialog_referral_code.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/error_dialog.xml" value="0.2833333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/fragment_merchant.xml" value="0.253125" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/fragment_personal.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/fragment_qr_dynamic.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/fragment_register.xml" value="0.2671875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/history_dialog.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_history_account_bonus.xml" value="0.2140625" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_manager_han_muc.xml" value="0.215625" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_referral_code.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_service.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_setting_tab_main.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/item_withdraw_history.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/manager_han_muc_dialog.xml" value="0.215625" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/nap_han_muc_dialog.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/notice_dialog.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/notify_dialog.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/statistic_day_fragment.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/statistic_month_fragment.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/success_payment_dialog.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/layout/support_viet_qr_dialog.xml" value="0.3546875" />
+        <entry key="..\:/Users/ADMIN/Desktop/paynet_one_android/paynetone-cashin/app/src/main/res/menu/business_menu.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/ADMIN/Desktop/paynetone-cashin/app/src/main/res/drawable-anydpi/ic_dashboard_selector.xml" value="0.231" />
         <entry key="..\:/Users/ADMIN/Desktop/paynetone-cashin/app/src/main/res/drawable-xxxhdpi/bg_item_option_payment.xml" value="0.138" />
         <entry key="..\:/Users/ADMIN/Desktop/paynetone-cashin/app/src/main/res/drawable/bg_transaction_dashboard.xml" value="0.231" />

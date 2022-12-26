@@ -23,9 +23,12 @@ import com.paynetone.counter.model.request.GetProviderResponse
 import com.paynetone.counter.model.request.PINAddRequest
 import com.paynetone.counter.model.request.PartNerAddressRequest
 import com.paynetone.counter.model.request.TopupAddressRequest
-import com.paynetone.counter.utils.*
+import com.paynetone.counter.utils.Constants
 import com.paynetone.counter.utils.ExtraConst.Companion.EXTRA_AMOUNT
 import com.paynetone.counter.utils.ExtraConst.Companion.EXTRA_URL_TOPUP_ADDRESS
+import com.paynetone.counter.utils.MarginDecoration
+import com.paynetone.counter.utils.SharedPref
+import com.paynetone.counter.utils.Toast
 
 class ServiceFragment : ViewFragment<ServiceContract.Presenter>(), ServiceContract.View {
 
@@ -66,6 +69,16 @@ class ServiceFragment : ViewFragment<ServiceContract.Presenter>(), ServiceContra
                 requireContext(), object : OptionPaymentAdapter.OnClickItemListener {
                     override fun onClickItem(item: GetProviderResponse) {
                         this@ServiceFragment.providerResponse = item
+
+                        val merchantStatus = paynetModel?.merchantStatus
+                        merchantStatus?.let {
+                            if (it == Constants.WAITING_APPROVAL){
+                                DevelopDialog(resources.getString(R.string.str_message_waiting_approval)).show(
+                                    childFragmentManager, "ServiceFragment"
+                                )
+                                return
+                            }
+                        }
                         if (item.isActive == Constants.PROVIDER_ACTIVE) {
                             if (sharedPref.isExistPINCode){
                                 ConfirmPINCodeDialog().show(childFragmentManager, "ServiceFragment")

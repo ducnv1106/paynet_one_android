@@ -185,36 +185,39 @@ public class MainFragment  extends ViewFragment<MainContract.Presenter> implemen
     }
 
     private void initViewPager(){
-        adapter = new FragmentPagerAdapter(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        try {
+            adapter = new FragmentPagerAdapter(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-            @Override
-            public Fragment getItem(int position) {
-                return getFragmentItem(position);
-            }
-
-            @Override
-            public int getCount() {
-                if (sharedPref.isMerchantAdmin()) return 3;
-                else{
-                    tabLayoutDashboard.setVisibility(View.GONE);
-                    viewLine1.setVisibility(View.GONE);
-                    ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) viewLine.getLayoutParams();
-                    params.startToStart = glv5.getId();
-                    viewLine.requestLayout();
-
-                    ConstraintLayout.LayoutParams params1 = (ConstraintLayout.LayoutParams) tabLayoutOne.getLayoutParams();
-                    params1.endToStart = glv5.getId();
-                    tabLayoutOne.requestLayout();
-
-                    ConstraintLayout.LayoutParams params2 = (ConstraintLayout.LayoutParams) tabLayoutTwo.getLayoutParams();
-                    params2.startToEnd = glv5.getId();
-                    params2.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
-                    tabLayoutTwo.requestLayout();
-                    return 2;
+                @Override
+                public Fragment getItem(int position) {
+                    return getFragmentItem(position);
                 }
-            }
-        };
 
+                @Override
+                public int getCount() {
+                    if (sharedPref.isMerchantAdmin()) return 3;
+                    else {
+                        tabLayoutDashboard.setVisibility(View.GONE);
+                        viewLine1.setVisibility(View.GONE);
+                        ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) viewLine.getLayoutParams();
+                        params.startToStart = glv5.getId();
+                        viewLine.requestLayout();
+
+                        ConstraintLayout.LayoutParams params1 = (ConstraintLayout.LayoutParams) tabLayoutOne.getLayoutParams();
+                        params1.endToStart = glv5.getId();
+                        tabLayoutOne.requestLayout();
+
+                        ConstraintLayout.LayoutParams params2 = (ConstraintLayout.LayoutParams) tabLayoutTwo.getLayoutParams();
+                        params2.startToEnd = glv5.getId();
+                        params2.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
+                        tabLayoutTwo.requestLayout();
+                        return 2;
+                    }
+                }
+            };
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 

@@ -26,6 +26,7 @@ class ExtraConst {
         const val EXTRA_LIST_MANAGER_HAN_MUC = "extra_list_manager_han_muc"
         const val EXTRA_AMOUNT_OUTWARD = "extra_amount_out_ward"
         const val EXTRA_AMOUNT_OUTWARD_GTGT = "extra_amount_out_ward_gtgt"
+        const val EXTRA_AMOUNT_OUTWARD_BONUS = "extra_amount_out_ward_bonus"
         const val EXTRA_CONTENT = "extra_content"
         const val EXTRA_PAYNET = "extra_paynet"
         const val EXTRA_TYPE_SUPPORT_VIETQR = "extra_type_support_vietqr"

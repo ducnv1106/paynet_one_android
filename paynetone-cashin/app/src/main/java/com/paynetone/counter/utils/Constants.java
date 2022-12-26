@@ -53,6 +53,8 @@ public class Constants {
     public static final String DIC_GET_ADDRESS_BY_PAYNETID   = "DIC_GET_ADDRESS_BY_PAYNETID";
     public static final String DIC_GET_APP_BANNER = "DIC_GET_APP_BANNER";
     public static final String PAYNET_CHECK_IF_HAS_CHILDREN = "PAYNET_CHECK_IF_HAS_CHILDREN";
+    public static final String REFERRAL_MERCHANT_SEARCH = "REFERRAL_MERCHANT_SEARCH";
+    public static final String REFERRAL_TRANS_SEARCH = "REFERRAL_TRANS_SEARCH";
 
     public static final int SCREEN_WIDTH_DESIGN = 375;
 
@@ -76,6 +78,7 @@ public class Constants {
 
     public static final String AMOUNT_OUTWARD = "AMOUNT_OUTWARD";
     public static final String AMOUNT_OUTWARD_GTGT = "AMOUNT_OUTWARD_GTGT";
+    public static final String AMOUNT_OUT_WARD_BONUS = "AMOUNT_OUT_WARD_BONUS";
     public static final String AMOUNT_TYPE_BALANCE = "AMOUNT_TYPE_BALANCE";
 
     public static final String REGISTER_PASS_DATA = "REGISTER_PASS_DATA";
@@ -186,6 +189,8 @@ public class Constants {
     public static final int ID_MOBILE_RECHARE = 77; // nạp thẻ điện thoại
     public static final int ID_TOPUP_DATA = 19;
     public static final int ID_CARD_GAME = 18;
+
+    public static final int ID_VNPAY = 5;
 
 
 

@@ -9,7 +9,7 @@
     <dimen name="textHeader">@dimen/_11sdp</dimen>
     <dimen name="paddingDetail">@dimen/_6sdp</dimen>
     <dimen name="imgPersonal">@dimen/_24sdp</dimen>
-    <dimen name="paddingItemWithdraw">@dimen/_2sdp</dimen>
+    <dimen name="paddingItemWithdraw">@dimen/_1sdp</dimen>
     <dimen name="marginRegister">@dimen/_12sdp</dimen>
     <dimen name="textSizeRegister">@dimen/_12sdp</dimen>
 
